@@ -1,0 +1,46 @@
+#add_picture{  /*Input picture form*/
+    background-color: #a0aec0;
+    padding-bottom: 15px;
+    padding-top: 20px;
+
+}
+#filename{
+    width: 500px;
+    margin-left: 55px;
+}
+
+#title{
+    width: 500px;
+    margin-left: 55px;
+}
+
+#description{
+    width: 500px;
+    margin-left: 55px;
+}
+
+#category{
+    width: 500px;
+    margin-left: 55px;
+}
+
+#category{
+    width: 500px;
+    margin-left: 55px;
+}
+
+#fototype{
+    width: 500px;
+    margin-left: 55px;
+}
+
+#signup-button{
+    /*display: flex; !* Justify text center *!*/
+    /*align-items: center; !* Justify text center *!*/
+    justify-content: center; /* Justify text center */
+    font-size:1.4vw; /* Масштабируем текст кнопки */
+    height: 3vw; /* Масштабируем размер кнопки о вертикали */
+    width: 12vw; /* Масштабируем размер кнопки по горизонтали*/
+    margin: auto;
+
+}

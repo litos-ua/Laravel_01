@@ -1,0 +1,9 @@
+.idea
+/.env.local
+/.env.install
+/logs/nginx/
+/docker/configs/nginx/project.conf
+/dbdata/
+/del_m/
+/public/pictures/images/
+/vendor/

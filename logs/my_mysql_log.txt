@@ -1,0 +1,25 @@
+2023-06-15 13:29:06 2023-06-15T11:29:06.854349Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 8.0.33) initializing of server 
+in progress as process 81
+2023-06-15 13:29:06 2023-06-15T11:29:06.859419Z 0 [ERROR] [MY-010457] [Server] --initialize specified but the data directory has 
+files in it. Aborting.
+2023-06-15 13:29:06 2023-06-15T11:29:06.859427Z 0 [ERROR] [MY-013236] [Server] The designated data directory /var/lib/mysql1/ is unusable.
+You can remove all files that the server added to it.
+2023-06-15 13:29:06 2023-06-15T11:29:06.859497Z 0 [ERROR] [MY-010119] [Server] Aborting
+2023-06-15 13:29:06 2023-06-15T11:29:06.859631Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.33)  
+MySQL Community Server - GPL.
+2023-06-15 13:27:56 2023-06-15 11:27:56+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.33-1.el8 started.
+2023-06-15 13:27:56 2023-06-15 11:27:56+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2023-06-15 13:27:56 2023-06-15 11:27:56+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.33-1.el8 started.
+2023-06-15 13:27:57 2023-06-15 11:27:57+00:00 [Note] [Entrypoint]: Initializing database files
+2023-06-15 13:28:30 2023-06-15 11:28:30+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.33-1.el8 started.
+2023-06-15 13:28:30 2023-06-15 11:28:30+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2023-06-15 13:28:30 2023-06-15 11:28:30+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.33-1.el8 started.
+2023-06-15 13:28:30 2023-06-15 11:28:30+00:00 [Note] [Entrypoint]: Initializing database files
+2023-06-15 13:28:49 2023-06-15 11:28:49+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.33-1.el8 started.
+2023-06-15 13:28:50 2023-06-15 11:28:50+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2023-06-15 13:28:50 2023-06-15 11:28:50+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.33-1.el8 started.
+2023-06-15 13:28:50 2023-06-15 11:28:50+00:00 [Note] [Entrypoint]: Initializing database files
+2023-06-15 13:29:06 2023-06-15 11:29:06+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.33-1.el8 started.
+2023-06-15 13:29:06 2023-06-15 11:29:06+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2023-06-15 13:29:06 2023-06-15 11:29:06+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.33-1.el8 started.
+2023-06-15 13:29:06 2023-06-15 11:29:06+00:00 [Note] [Entrypoint]: Initializing database files

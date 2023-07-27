@@ -1,0 +1,47 @@
+body {
+    /*{# background-color: transparent; #}*/
+    background-image: var(--background-image); /* Цвет фона и путь к файлу */
+    /*background-image: url("/pictures/back/Semeiz_01b.jpg")*/
+    /* url(http://localhost/pictures/Semeiz_01b.jpg) */
+    background-repeat: no-repeat; /*{# repeat-y #} */ /* Повторение фоновой картинки по вертикали*/
+    background-size: cover; /*{# contain #}*/
+}
+
+h1 {
+    text-align: center;
+    font-weight: normal;
+    color: #fff;
+    background-color: #0d6efd;
+    opacity: .2;
+    /*{# #0d6efd #}*/
+    border-color: #0d6efd;
+}
+.d-block{
+    height: 800px;
+    /*{#width: 95%;#}*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*{# Располагаем кнопки под картинкой посередине #}*/
+.btn-group{
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*{# Располагаем кнопки под картинкой посередине #}*/
+#btn_back_gallery{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: .5;
+}
+
+#div-img-car1{
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}

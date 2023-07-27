@@ -1,0 +1,25 @@
+.grid {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.grid th,
+.grid td {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+}
+
+/* Apply different background color for even and odd rows */
+.grid tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style the table header */
+.grid th {
+    background-color: #f9f9f9;
+}
+
+/* Add hover effect to rows on mouseover */
+.grid tbody tr:hover {
+    background-color: #e1e1e1;
+}
