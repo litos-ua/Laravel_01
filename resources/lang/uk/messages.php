@@ -21,6 +21,7 @@ return [
     'login_but' => 'Війти',
     'signup_but' => 'Зареєструйся',
     'logout_but' => 'Вийти',
+    'personal_account_but' => 'Кабінет',
 
     //Vacation
     'vc_page' => 'Сторінка відпусток',

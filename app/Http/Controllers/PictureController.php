@@ -121,7 +121,7 @@ class PictureController extends Controller
         }
     }
 
-    public function showByQuery()
+    public function showByQuery()   //Постмен
     {
 
         $id = request()->input('simpleSearch');

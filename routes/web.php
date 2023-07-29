@@ -19,13 +19,7 @@ use App\Http\Controllers\MainController;
 |
 */
 
-//Route::get('/', function () {
-//    //return view('welcome');
-//    return view('home');
-//});  //->name('home');
 
-Route::get('/', [MainController::class, 'root'])->name('root');
-Route::get('/home', [MainController::class, 'index'])->name('home');
 //Route::get('/main', [MainController::class, 'index'])->name('main');
 Route::get('/test', [TestController::class, 'testIndex'])->name('test01');
 Route::get('/test2', [TestController::class, 'testIndex2'])->name('test02');
@@ -38,10 +32,9 @@ Route::get('/my_page', function () {return 'This is my page!';});
 
 
 
+Route::get('/', [MainController::class, 'root'])->name('root');
+Route::get('/home', [MainController::class, 'index'])->name('home');
 
-//Route::get('/register', 'App\Http\Controllers\UserController@showRegistrationForm')
-//           ->name('register');
-//Route::post('/register', 'App\Http\Controllers\UserController@register');
 
 Route::middleware("auth:web")->group(function () {
     Route::get ('/logout', [AuthController::class, 'logout'])->name('logout');

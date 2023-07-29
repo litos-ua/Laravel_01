@@ -82,13 +82,21 @@
                     @yield('content1')
                     <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" id = "head-form-search" action="{{ route('search') }}" method="POST">
                     @csrf
-                        <div class="form-inline">
-                            <button type="submit" class="btn btn-primary mb-3" id="search-button">{{__('messages.search_but')}}</button>
+{{--                        <div class="form-inline">--}}
+{{--                            <button type="submit" class="btn btn-primary mb-3" id="search-button">{{__('messages.search_but')}}</button>--}}
+{{--                            <input type="search"--}}
+{{--                                class="form-control form-control-dark text-bg-dark"--}}
+{{--                                name="simpleSearch"--}}
+{{--                                placeholder="{{__('messages.search_but')}}..."--}}
+{{--                                aria-label="{{__('messages.search_but')}}">--}}
+{{--                        </div>--}}
+                        <div class="custom-input-group" id="search-group">
                             <input type="search"
-                                class="form-control form-control-dark text-bg-dark"
-                                name="simpleSearch"
-                                placeholder="{{__('messages.search_but')}}..."
-                                aria-label="{{__('messages.search_but')}}">
+                                   class="form-control form-control-dark text-bg-dark custom-search-input"
+                                   name="simpleSearch"
+                                   placeholder="{{__('messages.search_but')}}..."
+                                   aria-label="{{__('messages.search_but')}}">
+                            <button type="submit" class="btn btn-primary custom-search-button" id="search-button">{{__('messages.search_but')}}</button>
                         </div>
                     </form>
                     <div class="text-end">
@@ -110,6 +118,13 @@
                                 onclick="window.location.href= '/register'">
                             {{__('messages.signup_but')}}
                         </button>
+                            @if (Auth::check())
+                                <button type="button"
+                                        class="btn btn-outline-light me-2"
+                                        onclick="window.location.href= '/pictures/create'">
+                                    {{__('messages.personal_account_but')}}
+                                </button>
+                            @endif
 
                     </div>
         @show

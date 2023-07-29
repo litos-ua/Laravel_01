@@ -74,8 +74,26 @@ background-size: cover; /*{# contain #}*/
 
 }
 #search-button{
-    margin-top: 15px; /* Adjust block <button> with block <input> inside the form  */;
+    /*margin-top: 15px; /* Adjust block <button> with block <input> inside the form  */;
 }
+
+.custom-input-group {
+    display: flex;
+    align-items: center;
+    height: 40px; /* Set the desired height for the input field and button */
+    width: 350px;
+}
+
+.custom-search-input {
+    /* Set the desired width for the input field */
+    width: 80%; /* You can adjust this value as needed */
+}
+
+.custom-search-button {
+    /* Set the desired width for the button */
+    width: 20%; /* You can adjust this value as needed */
+}
+
 /* завершение выравнивания */
 .language-selector {
     position: relative!important;

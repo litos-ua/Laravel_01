@@ -21,6 +21,7 @@ return [
     'login_but' => 'Zaloguj sie',
     'signup_but' => 'Zapisać się',
     'logout_but' => 'Wyloguj',
+    'personal_account_but' => 'Konto',
 
     //Wakacje
     'vc_page' => 'Strona wakacji',

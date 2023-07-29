@@ -22,6 +22,7 @@ return [
     'login_but' => 'Login',
     'signup_but' => 'SignUp',
     'logout_but' => 'Logout',
+    'personal_account_but' => 'Account',
 
     //Vacation
     'vc_page' => 'Vacation page',
