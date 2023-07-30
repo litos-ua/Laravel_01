@@ -149,3 +149,18 @@ body {
     margin-top: 10px!important;
     float: right!important; /* Align the flags to the right */
 }
+
+/* Пробуем прижать футер */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#footer {
+    margin-top: auto;
+}
+/*--------------------------------------*/
