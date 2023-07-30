@@ -57,6 +57,12 @@ body {
     background-size: contain;
 }
 /*Мои эксперименты*/
+/*Делаем, чтобы кнопки в заголовке занимали 80*/
+#container2 {
+    max-width: 80%;
+}
+
+
 .custom-row {
     width: 135%;
     position: relative;

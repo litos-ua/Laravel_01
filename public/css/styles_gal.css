@@ -30,6 +30,10 @@ background-size: cover; /*{# contain #}*/
 #about {
     margin: 0px 0px 0px 50px;
 }
+/*Делаем, чтобы кнопки в заголовке занимали 80*/
+#container2 {
+    max-width: 80%;
+}
 
 /*{# Располагаем блоки горизонтально внутри основного блока #}*/
 #pic_gallery_div{

@@ -1,0 +1,13 @@
+.list-group {
+    background-color: #7f94b4; /* Set the background color */
+    margin-top: 50px; /* Set the top margin to 50px */
+}
+
+.list-group-item {
+    background: #7f94b4;
+}
+
+#list-group-item {
+    background: #7f94b4;
+    color: gold;
+}

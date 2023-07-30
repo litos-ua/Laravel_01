@@ -46,7 +46,7 @@
 @section('mainContent')
 <main>
 
-    <section class="py-3 text-center container">
+    <section class="py-3 text-center container" id="container2">
         @if($alert = session()->pull('alert'))
             <div class = "alert alert-success mb-0 rounded-0 text-center small py-2">
                 {{$alert}}
@@ -60,10 +60,10 @@
                  </div>
     </section>
 
-             <div class="album py-3 bg-light">
-                 <div class="container">
-                     @if (isset($vacations))
-                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <div class="album py-3 bg-light" id="container3">
+        <div class="container">
+            @if (isset($vacations))
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="container4">
                          @foreach ($vacations as $vacation)
                          <div class="col">
                              <div class="card shadow-sm">
@@ -75,38 +75,35 @@
                                       focusable="false">
 
                                      <a href="{{ route('gallery',['vacCat' => $vacation->id_cat]) }}">
-                                <image href="{{ asset(config('my_config.path_title_images') . $vacation->filename) }}"
+                                     <image href="{{ asset(config('my_config.path_title_images') . $vacation->filename) }}"
                                        alt="Альтернативний текст"
                                        width="100%"/>
-                            </a>
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{__('messages.vc_name')}}</text>
-                        </svg>
-                        <div class="card-body">
-                            <p class="card-text">{{ Lang::get("categories.$vacation->category") }} </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-
-                                    <a class="go_vac_gal_pic_btn" href="{{ route('gallery',['vacCat' => $vacation->id_cat]) }}">
-                                        <button type="button"
+                                      </a>
+                                      <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{__('messages.vc_name')}}</text>
+                                 </svg>
+                                 <div class="card-body">
+                                     <p class="card-text">{{ Lang::get("categories.$vacation->category") }} </p>
+                                     <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                          <a class="go_vac_gal_pic_btn" href="{{ route('gallery',['vacCat' => $vacation->id_cat]) }}">
+                                            <button type="button"
                                                 class="btn btn-sm btn-outline-secondary"
                                                 name="vac_gallery"
                                                 value="{{ Lang::get("categories.$vacation->category") }}"
                                                 onclick="window.location.href='gallery/7'">{{__('messages.vc_view')}} {{ Lang::get("categories.$vacation->category") }}
-                                        </button>
-                                    </a>
+                                            </button>
+                                          </a>
 
                                 </div>
                                 <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
+                             </div>
+                         </div>
                 </div>
+        </div>
                   @endforeach
                   @else
                         <p> {{__('messages.vc_er_01')}} </p>
-                  @endif
-            </div>
-        </div>
+            @endif
     </div>
 
 </main>

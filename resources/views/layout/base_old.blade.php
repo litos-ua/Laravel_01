@@ -57,7 +57,7 @@
     <div class="container">
 
         <div class="row ">
-            <div class="col-md-2 bg-menu"> {{--@yield()'menu') --}} </div>
+            <div class="col-md-2 bg-menu"> @yield('menu') </div>
             <div class="col-md-10" id = "content"> @yield('content') </div>
         </div>
     </div>

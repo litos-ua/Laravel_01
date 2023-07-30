@@ -76,9 +76,8 @@
                     </div>
                 </div>
             </div>
-            <div class="navbar navbar-dark bg-dark shadow-sm">
-                <div class="container">
-
+            <div class="navbar navbar-dark bg-dark shadow-sm ">
+                <div class="container" id="container2">
                     @yield('content1')
                     <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" id = "head-form-search" action="{{ route('search') }}" method="POST">
                     @csrf
