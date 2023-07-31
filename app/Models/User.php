@@ -24,6 +24,17 @@ class User extends Authenticatable
         'status',
     ];
 
+
+    /**
+     * Default values for attributes.
+     *
+     * @var array
+     */
+    protected $attributes = [
+        'status' => 0,
+    ];
+    
+
     /**
      * The attributes that should be hidden for serialization.
      *
