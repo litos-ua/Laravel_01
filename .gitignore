@@ -2,8 +2,8 @@
 /.env.local
 /.env.install
 /logs/nginx/
+/logs/pass_logs.txt
 /docker/configs/nginx/project.conf
 /dbdata/
 /del_m/
 /public/pictures/images/
-/vendor/

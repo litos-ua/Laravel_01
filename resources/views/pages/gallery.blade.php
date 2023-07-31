@@ -46,7 +46,7 @@
 <main>
 
     <section class="py-3 text-center container">
-        <div class="row py-lg-1">
+        <div class="row row-h py-lg-1">
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-normal">{{__('messages.fio')}} </h1>
                 <p class="lead {#  text-muted #} font-weight-bold">{{__('messages.vc_album')}}   {{__("categories.$vacName") }}</p>
@@ -59,8 +59,6 @@
     <div class="container">
 
         <div class="row justify-content-center" id="pic_gallery_div">
-
-
 
             @foreach ($pictures as $picture)
 
@@ -83,8 +81,28 @@
             </div>
             @endforeach
         </div>
+{{--        <div class="row justify-content-center">--}}
+{{--            <div class="col-md-8"> <!-- Adjust the column classes (e.g., col-md-8) to control the width -->--}}
+{{--                <div class="pagination justify-content-center mt-4">--}}
+{{--                    {{ $pictures->links() }}--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="pagination justify-content-center mt-4">
+                    {{ $pictures->links() }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- Output pagination links --}}
 
+{{--    <div class="pagination justify-content-center mt-4">--}}
+{{--        {{ $pictures->links() }}--}}
+{{--    </div>--}}
 </main>
 {{--{% endblock %}--}}
 @endsection

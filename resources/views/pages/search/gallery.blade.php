@@ -46,7 +46,7 @@
 <main>
 
     <section class="py-3 text-center container">
-        <div class="row py-lg-1">
+        <div class="row row-h py-lg-1">
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-normal">{{__('messages.fio')}}</h1>
                 <p class="lead {#  text-muted #} font-weight-bold">{{__('messages.vc_album')}}&nbsp&nbsp{{__('messages.gal_search_term')}} </p>

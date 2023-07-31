@@ -68,7 +68,11 @@
 
     <div class="h-screen bg-white flex flex-col space-y-10 justify-center items-center">
         <div class="bg-white w-96 shadow-xl rounded p-5">
-            <h1 class="text-3xl font-medium">Input pictures</h1>
+            @if (Auth::check())
+                <h1 class="text-3xl font-medium">Input pictures   User:  {{ Auth::user()->name }}</h1>
+            @else
+                <h1 class="text-3xl font-medium">Input pictures    User: Guest</h1>
+            @endif
                 <form class="space-y-5 mt-5 rounded"  id ="add_picture"   action="{{ route('insert.picture') }}" method="POST">
                     @csrf
                         <input type="text" class="w-full h-12 border border-gray-800 rounded px-3 @error('filename') border-red-500 @enderror"

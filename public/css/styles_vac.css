@@ -56,12 +56,15 @@ body {
     background-repeat: repeat-y; /*{# no-repeat #}*/  /* Повторение фоновой картинки по вертикали*/
     background-size: contain;
 }
-/*Мои эксперименты*/
-/*Делаем, чтобы кнопки в заголовке занимали 80*/
+
+/* Растягиваем заголовок */
 #container2 {
     max-width: 80%;
 }
-
+/* Верхняя надпись */
+.row-h {
+    max-height: 70px;
+}
 
 .custom-row {
     width: 135%;
@@ -142,17 +145,4 @@ body {
     float: right!important; /* Align the flags to the right */
 }
 
-/* Пробуем прижать футер */
-html, body {
-    height: 100%;
-}
 
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-#footer {
-    margin-top: auto;
-}
-/*--------------------------------------*/

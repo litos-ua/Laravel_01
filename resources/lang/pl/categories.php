@@ -24,7 +24,7 @@ return [
     'Льгов на реке Сейм 2020' =>	'Łgów nad rzeką Sejm 2020',
     'Сумская обл. Тростянец 2021' => 'Obwód Sumśkij Trostyaniec 2021',
     'Кицевская пустыня 2021' =>'Pustynia Kitsevo 2021',
-    'Сумская обл. на Ворскле 2021' => 'Obwód Sumśki nad rzeką Worskla 2021',
+    'Сумская обл. на Ворскле 2021' => 'Obwód Sumśki nad Worsklą 2021',
     'Донец  Коропово 2021' => 'Doniec Koropowo 2021',
     'Донец на меловых горах 2021' => 'Doniec w górach kredowych 2021',
     'Польша Лодзь 2022'	=> 'Polska Łódź 2022',

@@ -1,4 +1,5 @@
-<footer class="text-muted fixed-down  py-5" id="footer">
+<footer class="text-muted   py-5" id="footer">
+{{--    fixed-bottom--}}
     <div class="container" id="divfooter">
         <p class="float-end mb-1">
             <a href="#">{{__('messages.to_top')}}</a>

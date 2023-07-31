@@ -52,7 +52,7 @@
                 {{$alert}}
             </div>
          @endif
-                 <div class="row py-lg-1">
+                 <div class="row row-h py-lg-1">
                      <div class="col-lg-6 col-md-8 mx-auto">
                          <h1 class="fw-normal">{{__('messages.vc_album')}} {{ $selectedLanguage }}</h1>
                          <p class="lead {#  text-muted #} font-weight-bold">{{__('messages.vc_time')}}</p>

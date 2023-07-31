@@ -111,6 +111,11 @@ background-size: cover; /*{# contain #}*/
     margin-top: 10px!important;
     float: right!important; /* Align the flags to the right */
 }
+/* Верхняя надпись */
+.row-h {
+    max-height: 80px;
+}
+
 
 /* Пробуем прижать футер */
 html, body {
@@ -126,3 +131,29 @@ body {
     margin-top: auto;
 }
 /*--------------------------------------*/
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 700px;
+}
+
+.pagination .page-item {
+    margin: 0 5px;
+}
+
+.pagination .page-item .page-link {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.pagination .page-item .page-link:hover,
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
