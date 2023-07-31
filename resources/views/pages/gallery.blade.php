@@ -81,14 +81,8 @@
             </div>
             @endforeach
         </div>
-{{--        <div class="row justify-content-center">--}}
-{{--            <div class="col-md-8"> <!-- Adjust the column classes (e.g., col-md-8) to control the width -->--}}
-{{--                <div class="pagination justify-content-center mt-4">--}}
-{{--                    {{ $pictures->links() }}--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
     </div>
+    {{-- Output pagination links --}}
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -98,11 +92,7 @@
             </div>
         </div>
     </div>
-    {{-- Output pagination links --}}
 
-{{--    <div class="pagination justify-content-center mt-4">--}}
-{{--        {{ $pictures->links() }}--}}
-{{--    </div>--}}
 </main>
 {{--{% endblock %}--}}
 @endsection

@@ -16,7 +16,6 @@ class GalleryController extends Controller
         $ipAddress = $request->ip();
         $vacCat = (int) $vacCat;
         $picturesByVacations = Picture::where('category','=',$vacCat)->get();
-        $perPage = 18; // Number of pictures to display per page
 
         // Check the 'view-picture' gate for each picture
         $allowedPictures = $picturesByVacations->filter(function ($picture) {
@@ -24,6 +23,7 @@ class GalleryController extends Controller
         });
 
         // Paginate the filtered pictures
+        $perPage = 18; // Number of pictures to display per page
         $picturesByVacations = new LengthAwarePaginator(
             $allowedPictures->forPage($request->input('page', 1), $perPage),
             $allowedPictures->count(),

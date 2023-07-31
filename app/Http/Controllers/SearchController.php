@@ -14,7 +14,7 @@ class SearchController extends Controller
     {
         $searchTerm = $request->input('simpleSearch');
         $pictures = Picture::where('description', 'LIKE', '%' . $searchTerm . '%')->get();
-        $compactPic = compact('pictures');
+        //$compactPic = compact('pictures');
         $vacCat = 1001; //Определяет работу PictureController (>1000 - работает по ветке роутов Search)
         $vacName = 'Поиск по части слова';
 

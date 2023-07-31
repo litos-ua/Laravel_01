@@ -132,28 +132,8 @@ body {
 }
 /*--------------------------------------*/
 
-.pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    width: 700px;
-}
-
-.pagination .page-item {
-    margin: 0 5px;
-}
-
-.pagination .page-item .page-link {
-    padding: 5px 10px;
-    border-radius: 5px;
-    color: #333;
-    background-color: #fff;
-    border: 1px solid #ccc;
-}
-
-.pagination .page-item .page-link:hover,
-.pagination .page-item.active .page-link {
-    background-color: #007bff;
-    color: #fff;
-    border-color: #007bff;
+.col-md-8 {
+    margin-top: 0;
+    padding-top: 0;
+    height: 70%;
 }
