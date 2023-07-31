@@ -8,6 +8,7 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\VacationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\Admin\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,6 +52,17 @@ Route::middleware("auth:web")->group(function () {
 
     Route::get('/pictures/create', [PictureController::class, 'create'])->name('create.picture');
     Route::post('/pictures/create_process', [PictureController::class, 'store'])->name('insert.picture');
+
+    // Routes for ordinary users
+    //Route::resource('user', UserController::class)->only(['edit', 'update']);
+    Route::get('/user/edit', [UserController::class, 'editForm'])->name('user.edit');
+    Route::put('/user/update', [UserController::class, 'update'])->name('user.update');
+    // Routes for administrators (you can use a different prefix if needed)
+    Route::prefix('admin')->group(function () {
+        Route::resource('user', UserController::class)->only(['index', 'create', 'store', 'show', 'destroy']);
+        // Add other administrator-specific routes here
+    });
+
 
     //Route::post('/api/picturesa', [PictureController::class, 'showByQuery'])->name('api_picturesa'); //Постмен
 });

@@ -58,10 +58,9 @@ class User extends Authenticatable
         //'status.*' => 'integer', // Specify that the array contains integer values
     ];
 
-    public function pictures()
+    public function phones()
     {
         return $this->hasMany(Phone::class, 'user_id', 'id');
     }
-
 
 }

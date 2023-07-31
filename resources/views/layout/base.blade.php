@@ -120,7 +120,7 @@
                             @if (Auth::check())
                                 <button type="button"
                                         class="btn btn-outline-light me-2"
-                                        onclick="window.location.href= '/pictures/create'">
+                                        onclick="window.location.href= '/user/edit'">
                                     {{__('messages.personal_account_but')}}
                                 </button>
                             @endif
