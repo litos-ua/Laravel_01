@@ -33,7 +33,7 @@ class User extends Authenticatable
     protected $attributes = [
         'status' => 0,
     ];
-    
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -57,4 +57,11 @@ class User extends Authenticatable
         //'status' => 'array', // Specify 'status' as an array
         //'status.*' => 'integer', // Specify that the array contains integer values
     ];
+
+    public function pictures()
+    {
+        return $this->hasMany(Phone::class, 'user_id', 'id');
+    }
+
+
 }
