@@ -1,10 +1,10 @@
 @extends ('layout.base_old')
 
 @section('title')
-    Input pictures
+    User account
 @endsection
 
-@section('css1') <link rel="stylesheet" href="{{ asset('/css/datachange/styles_add_picture.css') }}">@show
+@section('css1') <link rel="stylesheet" href="{{ asset('/css/admin/styles_user_panel.css') }}">@show
 
 
 <head>
@@ -38,7 +38,14 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Edit Your Profile  ')}} {{ Auth::user()->name }}</div>
+                    <div class="card-header">
+                        <p>{{ __('User:  ')}} {{ Auth::user()->name }}{{ __('  Profile  ')}}</p>
+                        <p>{{ __('Email:  ')}} {{ Auth::user()->email }}{{ __('       Status:  ')}} {{ Auth::user()->status }}</p>
+{{--                        <p>{{ __('Telephone:  ')}}{{ Auth::user()->phones[0]->phonenumber }}</p>--}}
+                        @foreach(Auth::user()->phones as $phone)
+                            <p>{{ __('Telephone:  ')}} {{ $phone->phonenumber }}</p>
+                        @endforeach
+                    </div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('user.update') }}">
@@ -68,7 +75,12 @@
                                 <div class="col-md-6">
                                     <input id="phonenumber" type="text"
                                            class="form-control @error('phonenumber') is-invalid @enderror"
-                                           name="phonenumber" value="{{ old('phonenumber', optional($phone)->phonenumber) }}" required>
+{{--  doesn't work                         name="phonenumber" value="{{ old('phonenumber', optional($phone)->phonenumber) }}" required>--}}
+{{--  doesn't work                         name="phonenumber" value="{{ old('phonenumber', Auth::user()->phones[0]->phonenumber) }}" required>--}}
+{{--  work                                 name="phonenumber" value="{{ old('phonenumber', Auth::user()->phones[0]->phonenumber) }}" required>--}}
+                                           name="phonenumber" value="{{ old('phonenumber', isset(Auth::user()->phones[0]) ? Auth::user()->phones[0]->phonenumber : '') }}"
+                                           required  pattern="^\+[0-9]{12}$"
+                                           title="Please enter a valid phone number starting with a '+' sign followed by ten digits.">
                                     @error('phonenumber')
                                     <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -79,12 +91,31 @@
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Update Profile') }}
-                                    </button>
+                                    <div class="d-flex justify-content-center">
+                                        <button type="submit" class="btn btn-primary">
+                                            {{ __('Update Profile') }}
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </form>
+                        <div class="container">
+                            <!-- Display success message if it exists in the session -->
+                            @if(session('success'))
+                                <div class="alert alert-success">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
+
+                            <!-- Display error message if it exists in the session -->
+                            @if(session('error'))
+                                <div class="alert alert-danger">
+                                    {{ session('error') }}
+                                </div>
+                            @endif
+
+                            <!-- ... rest of the form ... -->
+                        </div>
                     </div>
                 </div>
             </div>

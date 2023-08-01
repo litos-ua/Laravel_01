@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -55,26 +56,40 @@ class UserController extends Controller
      */
     public function update(Request $request)
     {
-        $user = Auth::user();
-        $phone = $user->phones()->first(); // Get the first related phone record (if exists)
+        try {
+            $user = Auth::user();
+            $phone = $user->phones()->first(); // Get the first related phone record (if exists)
 
-        // Validate the request data
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'phonenumber' => 'required|string|max:45',
-        ]);
+            // Validate the request data
+            $request->validate([
+                'name' => 'required|string|max:255',
+                'phonenumber' => 'required|string|max:45',
+            ]);
 
-        // Update the user data
-        $user->update($request->only(['name']));
+            // Update the user data
+            $user->update($request->only(['name']));
 
-        // Update the phone number if a related phone record exists
-        if ($phone) {
-            $phone->update($request->only(['phonenumber']));
+            // Update or create the phone number
+            if ($phone) {
+                $phone->update($request->only(['phonenumber']));
+            } else {
+                // Create a new phone record with the provided phone number
+                $user->phones()->create(['phonenumber' => $request->input('phonenumber')]);
+            }
+
+            // Set the success message in the session
+            Session::flash('success', 'Your data has been updated successfully.');
+
+            // Redirect the user after update
+            return redirect()->route('user.edit');
+
+        } catch (\Exception $e) {
+            // Handle any exceptions that may occur
+            Session::flash('error', 'Your data hasn\'t been updated. An error occurred while updating your data!');
+            return redirect()->route('user.edit');
         }
-
-        // Redirect the user after update
-        return redirect()->route('user.edit')->with('success', 'Your data has been updated successfully.');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -92,3 +107,30 @@ class UserController extends Controller
     }
 }
 
+
+
+//public function update(Request $request)
+//{
+//    $user = Auth::user();
+//    $phone = $user->phones()->first(); // Get the first related phone record (if exists)
+//
+//    // Validate the request data
+//    $request->validate([
+//        'name' => 'required|string|max:255',
+//        'phonenumber' => 'required|string|max:45',
+//    ]);
+//
+//    // Update the user data
+//    $user->update($request->only(['name']));
+//
+//    // Update the phone number if a related phone record exists
+//    if ($phone) {
+//        $phone->update($request->only(['phonenumber']));
+//    }else {
+//        // Create a new phone record with the provided phone number
+//        $user->phones()->create(['phonenumber' => $request->input('phonenumber')]);
+//    }
+//
+//    // Redirect the user after update
+//    return redirect()->route('user.edit')->with('success', 'Your data has been updated successfully.');
+//}
