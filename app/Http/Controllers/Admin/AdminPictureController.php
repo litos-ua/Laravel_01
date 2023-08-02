@@ -3,16 +3,17 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Picture;
 use Illuminate\Http\Request;
 
-class AdminUserController extends Controller
+class AdminPictureController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('/admin/admin_user');
+        return view('Welcome');
     }
 
     /**
@@ -34,7 +35,7 @@ class AdminUserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Picture $picture)
     {
         //
     }
@@ -42,7 +43,7 @@ class AdminUserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Picture $picture)
     {
         //
     }
@@ -50,7 +51,7 @@ class AdminUserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Picture $picture)
     {
         //
     }
@@ -58,7 +59,7 @@ class AdminUserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Picture $picture)
     {
         //
     }

@@ -11,3 +11,25 @@
     background: #7f94b4;
     color: gold;
 }
+
+.bg-menu {
+    padding-bottom: 20px;
+
+}
+
+/* Style for the dropdown submenu */
+.dropdown-menu {
+    background: #7f94b4; /* Set the background color for the dropdown menu */
+}
+
+.dropdown-item {
+    background: #7f94b4; /* Set the background color for the dropdown items */
+    color: gold; /* Set the text color for the dropdown items */
+}
+
+/* Style for the dropdown menu when it's open */
+.dropdown-menu.show {
+    display: block; /* Ensure the dropdown menu is visible when open */
+}
+
+

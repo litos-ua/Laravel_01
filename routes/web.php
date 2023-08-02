@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminPictureController;
+use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\PictureController;
@@ -63,7 +65,25 @@ Route::middleware("auth:web")->group(function () {
      * Routes for administrators (you can use a different prefix if needed)
      */
     Route::prefix('admin')->group(function () {
-        Route::resource('user', UserController::class)->only(['index', 'create', 'store', 'show', 'destroy']);
+        //Route::resource('user', UserController::class)->only(['index', 'create', 'store', 'show', 'destroy']);
+        Route::resource('user', AdminUserController::class)
+            ->only(['index', 'create', 'store', 'show', 'destroy'])
+            ->names([
+                'index' => 'admin.user.index',
+                'create' => 'admin.user.create',
+                'store' => 'admin.user.store',
+                'show' => 'admin.user.show',
+                'destroy' => 'admin.user.destroy',
+        ]);
+        Route::resource('user/picture', AdminPictureController::class)
+            ->only(['index', 'create', 'store', 'show', 'destroy'])
+            ->names([
+               'index' => 'admin.user.picture.index',
+               'create' => 'admin.user.picture.create',
+               'store' => 'admin.user.picture.store',
+               'show' => 'admin.user.picture.show',
+               'destroy' => 'admin.user.picture.destroy',
+        ]);
         // Add other administrator-specific routes here
     });
 

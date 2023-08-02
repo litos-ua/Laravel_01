@@ -121,7 +121,7 @@
                                 <button type="button"
                                         class="btn btn-outline-light me-2"
                                         @if(Auth::user()->status===3)
-                                            onclick="window.location.href= '/pictures/create'"
+                                            onclick="window.location.href= '/admin/user'" {{--/pictures/create--}}
                                         @else
                                             onclick="window.location.href= '/user/edit'"
                                         @endif
