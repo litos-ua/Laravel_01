@@ -120,7 +120,12 @@
                             @if (Auth::check())
                                 <button type="button"
                                         class="btn btn-outline-light me-2"
-                                        onclick="window.location.href= '/user/edit'">
+                                        @if(Auth::user()->status===3)
+                                            onclick="window.location.href= '/pictures/create'"
+                                        @else
+                                            onclick="window.location.href= '/user/edit'"
+                                        @endif
+                                        >
                                     {{__('messages.personal_account_but')}}
                                 </button>
                             @endif
@@ -148,6 +153,9 @@
 
         @section('mainContent')
         <main>
+            @if (isset(Auth::user()->status))
+                <p>User Status:   {{Auth::user()->status}} &nbsp&nbsp&nbsp Status type: {{ gettype(Auth::user()->status) }}</p>
+            @endif
             <section class="py-3 text-center container">
                 <div>
                 </div>
