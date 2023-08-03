@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminPictureController;
+use App\Http\Controllers\Admin\AdminUserPictureController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GalleryController;
@@ -75,19 +75,32 @@ Route::middleware("auth:web")->group(function () {
                 'show' => 'admin.user.show',
                 'destroy' => 'admin.user.destroy',
         ]);
-        Route::resource('user/picture', AdminPictureController::class)
-            ->only(['index', 'create', 'store', 'show', 'destroy'])
-            ->names([
-               'index' => 'admin.user.picture.index',
-               'create' => 'admin.user.picture.create',
-               'store' => 'admin.user.picture.store',
-               'show' => 'admin.user.picture.show',
-               'destroy' => 'admin.user.picture.destroy',
-        ]);
-        // Add other administrator-specific routes here
+//        Route::resource('user/picture', AdminUserPictureController::class)
+//            ->only(['index', 'create', 'store', 'show', 'destroy'])
+//            ->names([
+//               'index' => 'admin.user.picture.index',
+//               'create' => 'admin.user.picture.create',
+//               'store' => 'admin.user.picture.store',
+//               'show' => 'admin.user.picture.show',
+//               'destroy' => 'admin.user.picture.destroy',
+//        ]);
+
     });
 
     //Route::post('/api/picturesa', [PictureController::class, 'showByQuery'])->name('api_picturesa'); //Постмен
+});
+
+    Route::prefix('super')->group(function () {
+        //Route::resource('user', UserController::class)->only(['index', 'create', 'store', 'show', 'destroy']);
+        Route::resource('user/picture', AdminUserPictureController::class)
+            ->only(['index', 'create', 'store', 'show', 'destroy'])
+            ->names([
+                'index' => 'super.user.picture.index',
+                'create' => 'super.user.picture.create',
+                'store' => 'super.user.picture.store',
+                'show' => 'super.user.picture.show',
+                'destroy' => 'super.user.picture.destroy',
+         ]);
 });
 
 

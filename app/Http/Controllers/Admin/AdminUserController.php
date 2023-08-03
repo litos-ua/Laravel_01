@@ -12,6 +12,7 @@ class AdminUserController extends Controller
      */
     public function index()
     {
+        //dd('This is the AdminUserController index method');
         return view('/admin/admin_user');
     }
 

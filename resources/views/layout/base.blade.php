@@ -46,7 +46,12 @@
                     <div class="row custom-row">
 
                         <div class="col-sm-2 col-md-3 py-4">
+                            {{--Loading different photos when expanding the header menu--}}
+                            @if(Auth::check() and Auth::user()->status>0)
+                            <a href="/"><img id = "logo" src = "{{ asset(config('my_config.logo_image_auth')) }}" alt="Альтернативний текст"/></a>
+                            @else
                             <a href="/"><img id = "logo" src = "{{ asset(config('my_config.logo_image')) }}" alt="Альтернативний текст"/></a>
+                            @endif
                         </div>
 
                         <div class="col-sm-6 col-md-3 py-3" id="about">
@@ -81,14 +86,6 @@
                     @yield('content1')
                     <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" id = "head-form-search" action="{{ route('search') }}" method="POST">
                     @csrf
-{{--                        <div class="form-inline">--}}
-{{--                            <button type="submit" class="btn btn-primary mb-3" id="search-button">{{__('messages.search_but')}}</button>--}}
-{{--                            <input type="search"--}}
-{{--                                class="form-control form-control-dark text-bg-dark"--}}
-{{--                                name="simpleSearch"--}}
-{{--                                placeholder="{{__('messages.search_but')}}..."--}}
-{{--                                aria-label="{{__('messages.search_but')}}">--}}
-{{--                        </div>--}}
                         <div class="custom-input-group" id="search-group">
                             <input type="search"
                                    class="form-control form-control-dark text-bg-dark custom-search-input"

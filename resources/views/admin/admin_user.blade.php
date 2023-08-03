@@ -31,19 +31,23 @@
 @section('menu')
     <div class="list-group">
         <a href="{{ route('home') }}" class="list-group-item list-group-item-action" id="list-group-item">Home</a>
+        <a href="{{ route('admin.user.index') }}" class="list-group-item list-group-item-action" id="list-group-item">Home admin</a>
         <a href="{{ route('vacation') }}" class="list-group-item list-group-item-action" id="list-group-item">Vacation</a>
         <div class="dropdown">
             <a href="#" class="list-group-item list-group-item-action" id="list-group-item" data-bs-toggle="dropdown">
                 Pictures
             </a>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item list-group-item-action" href="{{ route('admin.user.picture.show', 125) }}">Show</a></li>
-                <li><a class="dropdown-item list-group-item-action" href="{{ route('admin.user.picture.create') }}">Create</a></li>
-                <li><a class="dropdown-item list-group-item-action" href="{{ route('admin.user.picture.store') }}">Update</a></li>
-                <li><a class="dropdown-item list-group-item-action" href="{{ route('admin.user.picture.destroy', 2000) }}">Delete</a></li>
+                <li><a class="dropdown-item list-group-item-action" href="{{ route('super.user.picture.index') }}">Index</a></li>
+                <li><a class="dropdown-item list-group-item-action" href="{{ route('super.user.picture.create') }}">Create</a></li>
+                <li><a class="dropdown-item list-group-item-action" href="{{ route('super.user.picture.store') }}">Update</a></li>
+                <li><a class="dropdown-item list-group-item-action" href="{{ route('super.user.picture.destroy', 2000) }}">Delete</a></li>
             </ul>
         </div>
-        <a href="{{ route('admin.user.index') }}" class="list-group-item list-group-item-action" id="list-group-item">User</a>
+        <a href="{{ route('home') }}" class="list-group-item list-group-item-action" id="list-group-item">User</a>
         <a href="{{ route('logout') }}" class="list-group-item list-group-item-action" id="list-group-item">Logout</a>
     </div>
+@endsection
+@section('content')
+    <h2>This is the content of admin_user.blade.php</h2>
 @endsection
