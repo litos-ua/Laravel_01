@@ -41,6 +41,12 @@
     padding-top: 20px;
 
 }
+
+#id_pic {
+    width: 500px;
+    margin-left: 55px;
+}
+
 #filename{
     width: 500px;
     margin-left: 55px;

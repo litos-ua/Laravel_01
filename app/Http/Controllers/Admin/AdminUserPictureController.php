@@ -15,7 +15,7 @@ class AdminUserPictureController extends Controller
     public function index()
     {
         //dd('This is the AdminUserPictureController index method');
-        return view('admin.admin_user_picture');
+        return view('admin.admin_user_picture_create');
     }
 
     /**
@@ -23,7 +23,7 @@ class AdminUserPictureController extends Controller
      */
     public function create()
     {
-        return view('admin.admin_user_picture');
+        return view('admin.admin_user_picture_create');
     }
 
     /**
@@ -72,15 +72,49 @@ class AdminUserPictureController extends Controller
      */
     public function edit(Picture $picture)
     {
-        //
+        return view('admin.admin_user_picture_update', [
+            'picture' => $picture,
+        ]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     * MY TEST ROUTE
+     */
+    public function input(Picture $picture)
+    {
+        return view('admin.admin_user_picture_update', [
+            'picture' => $picture,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Picture $picture)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            'id_pic' => 'required|integer',
+            'filename' => 'required|string|max:60',
+            'title' => 'required|string|max:60',
+            'description' => 'required|string|max:150',
+            'category' => 'required|integer',
+            'fototype' => 'required|integer',
+        ]);
+        $pictureId = $request->input('id_pic');
+        $picture = Picture::findOrFail($pictureId);
+        try {
+            // Update the data in the database
+            $picture->update($request->all());
+            session()->flash('success', 'Picture updated successfully!');
+            return redirect()->back()->with('success', 'Picture updated successfully!');
+        } catch (QueryException $exception) {
+            // Handle exceptions
+            if ($exception->getCode() == 23000) {
+                return response()->json(['error' => 'Category value does not exist. Please enter a valid value for the category!'], 422);
+            }
+            throw $exception;
+        }
     }
 
     /**

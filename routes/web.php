@@ -87,21 +87,30 @@ Route::middleware("auth:web")->group(function () {
 
     });
 
-    //Route::post('/api/picturesa', [PictureController::class, 'showByQuery'])->name('api_picturesa'); //Постмен
-});
-
     Route::prefix('super')->group(function () {
         //Route::resource('user', UserController::class)->only(['index', 'create', 'store', 'show', 'destroy']);
         Route::resource('user/picture', AdminUserPictureController::class)
-            ->only(['index', 'create', 'store', 'show', 'destroy'])
+            ->only(['index', 'store', 'create','edit', 'update' ,'show', 'destroy'])
+            //->except(['edit'])
             ->names([
                 'index' => 'super.user.picture.index',
                 'create' => 'super.user.picture.create',
                 'store' => 'super.user.picture.store',
+                'edit' => 'super.user.picture.edit',
+                'update' => 'super.user.picture.update',
                 'show' => 'super.user.picture.show',
                 'destroy' => 'super.user.picture.destroy',
-         ]);
+            ]);
+        //Route::get('user/picture/input', [AdminUserPictureController::class,'input'])->name('super.user.picture.input');
+    });
+
+    Route::get('root/user/picture/input/{picture}', [AdminUserPictureController::class,'input'])
+            ->name('root.user.picture.input');
+
+    //Route::post('/api/picturesa', [PictureController::class, 'showByQuery'])->name('api_picturesa'); //Постмен
 });
+
+
 
 
 Route::middleware("guest:web")->group(function () {
