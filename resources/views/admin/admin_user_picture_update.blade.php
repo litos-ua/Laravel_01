@@ -65,9 +65,9 @@
     <div class="h-screen bg-white flex flex-col space-y-10 justify-center items-center">
         <div class="bg-white w-96 shadow-xl rounded p-5">
             @if (Auth::check())
-                <h1 class="text-3xl font-medium">Update pictures   User:  {{ Auth::user()->name }}</h1>
+                <h1 class="text-3xl font-medium header-title">Update pictures   User:  {{ Auth::user()->name }}</h1>
             @else
-                <h1 class="text-3xl font-medium">Update pictures    User: Guest</h1>
+                <h1 class="text-3xl font-medium header-title">Update pictures    User: Guest</h1>
             @endif
                 <form class="space-y-5 mt-5 rounded"  id ="add_picture"   action="{{ route('super.user.picture.update', ['picture' => $picture]) }}" method="POST">
                     @csrf

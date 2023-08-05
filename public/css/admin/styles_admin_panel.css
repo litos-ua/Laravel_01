@@ -34,7 +34,7 @@
 
 
 
-/* Style for the input menu */
+/* -------------------------------Style for the input menu---------------------------------- */
 #add_picture{  /*Input picture form*/
     background-color: #a0aec0;
     padding-bottom: 15px;
@@ -86,4 +86,60 @@
     width: 12vw; /* Масштабируем размер кнопки по горизонтали*/
     margin: auto;
 
+}
+/*------------------------------End Style for the input menu--------------------------*/
+
+/*----------------------------------Grid in the template_index------------------------*/
+.grid {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.grid td {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+}
+
+.grid th {
+    padding: 8px 12px;
+    border: 1px solid #ccc
+}
+
+
+/* Apply different background color for even and odd rows */
+.grid tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style the table header */
+.grid th {
+    background-color: #f9f9f9;
+}
+
+/* Add hover effect to rows on mouseover */
+.grid tbody tr:hover {
+    background-color: #e1e1e1;
+}
+
+.w-96-custom {
+    width: 180%; /* Override the fixed width */
+    padding: 0rem!important;
+    margin-top: 0px;
+}
+
+
+/*---------------------------------------Edd grid*--------------------------------------*/
+
+.header-title {
+    font-size: 2rem; /* Adjust the font size as needed */
+    color: blue;
+}
+
+.pagination {
+    margin-top: 2px; /* Adjust the margin top value as needed */
+}
+
+.pagination .page-link {
+    padding: 0.25rem 0.5rem; /* Adjust the padding values as needed */
+    font-size: inherit; /* Keep the font size the same */
 }

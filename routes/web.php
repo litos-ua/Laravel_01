@@ -75,23 +75,14 @@ Route::middleware("auth:web")->group(function () {
                 'show' => 'admin.user.show',
                 'destroy' => 'admin.user.destroy',
         ]);
-//        Route::resource('user/picture', AdminUserPictureController::class)
-//            ->only(['index', 'create', 'store', 'show', 'destroy'])
-//            ->names([
-//               'index' => 'admin.user.picture.index',
-//               'create' => 'admin.user.picture.create',
-//               'store' => 'admin.user.picture.store',
-//               'show' => 'admin.user.picture.show',
-//               'destroy' => 'admin.user.picture.destroy',
-//        ]);
 
     });
 
     Route::prefix('super')->group(function () {
-        //Route::resource('user', UserController::class)->only(['index', 'create', 'store', 'show', 'destroy']);
+//        Route::get('user/picture/main', [AdminUserPictureController::class, 'main'])
+//            ->name('super.user.picture.main');
         Route::resource('user/picture', AdminUserPictureController::class)
             ->only(['index', 'store', 'create','edit', 'update' ,'show', 'destroy'])
-            //->except(['edit'])
             ->names([
                 'index' => 'super.user.picture.index',
                 'create' => 'super.user.picture.create',

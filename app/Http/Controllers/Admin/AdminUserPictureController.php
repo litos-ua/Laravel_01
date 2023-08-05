@@ -4,18 +4,61 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Picture;
+use App\Models\Vacation;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class AdminUserPictureController extends Controller
 {
+    public function main()
+    {
+        //dd('This is the AdminUserPictureController index method');
+        return view('admin.admin_user_picture_index');
+    }
+
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //dd('This is the AdminUserPictureController index method');
-        return view('admin.admin_user_picture_create');
+//        $picturesByVacations = Vacation::join('pictures', 'vacations.id_cat', '=', 'pictures.category')
+//            ->where('pictures.fototype', '>', 0)
+//            ->orderBy('vacations.id_cat')
+//            ->orderBy('vacations.category')
+//            ->orderBy('pictures.filename')
+//            ->orderBy('pictures.description')
+//            ->select('vacations.id_cat', 'vacations.category', 'pictures.filename', 'pictures.description')
+//            ->get();
+//
+//        $vacationsWithPictures = new LengthAwarePaginator(
+//            $picturesByVacations->forPage($request->input('page', 1), 18),
+//            $picturesByVacations->count(),
+//            18,
+//            $request->input('page', 1),
+//            ['path' => $request->url(), 'query' => $request->query()]
+//        );
+
+        $picturesByVacations = Vacation::join('pictures', 'vacations.id_cat', '=', 'pictures.category')
+            ->where('pictures.fototype', '>', 0)
+            //->orderBy('vacations.id_cat')
+            ->orderBy('pictures.id_pic')
+            ->orderBy('vacations.category')
+            ->orderBy('pictures.filename')
+            ->orderBy('pictures.description')
+            //->select('vacations.id_cat', 'vacations.category', 'pictures.filename', 'pictures.description')
+            ->select('pictures.id_pic', 'vacations.category', 'pictures.filename', 'pictures.description')
+            ->paginate(18); // Use the 'paginate' method directly
+
+
+
+        //$columns = $vacationsWithPictures->count() > 0 ? array_keys($vacationsWithPictures[0]->toArray()) : []; //Работает подсказал AI
+        $columns = array_keys(($picturesByVacations->first())->toArray()); // Мой аналог предыдущего
+
+        return view('admin.admin_user_picture_index', [
+            'vacationsWithPictures' => $picturesByVacations,
+            'columns' => $columns,
+        ]);
     }
 
     /**
