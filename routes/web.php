@@ -61,6 +61,7 @@ Route::middleware("auth:web")->group(function () {
     //Route::resource('user', UserController::class)->only(['edit', 'update']);
     Route::get('/user/edit', [UserController::class, 'editForm'])->name('user.edit');
     Route::put('/user/update', [UserController::class, 'update'])->name('user.update');
+
     /**
      * Routes for administrators (you can use a different prefix if needed)
      */

@@ -46,10 +46,40 @@
                        href="{{ route('super.user.picture.destroy', 2000) }}">Delete</a></li>
             </ul>
         </div>
-        <a href="{{ route('admin.user.create') }}" class="list-group-item list-group-item-action" id="list-group-item">User</a>
+        <a href="{{ route('home') }}" class="list-group-item list-group-item-action" id="list-group-item">User</a>
         <a href="{{ route('logout') }}" class="list-group-item list-group-item-action" id="list-group-item">Logout</a>
     </div>
 @endsection
 @section('content')
-    <h2>This is the content of admin_user.blade.php</h2>
+    <div class="card">
+        <div class="h-screen bg-white flex flex-col space-y-10 justify-center items-center">
+            <div class="bg-white w-96-custom shadow-xl rounded p-3">
+                @if (Auth::check())
+                    <h1 class="text-3xl font-medium font-size-sm header-title">User table   User:  {{ Auth::user()->name }}</h1>
+                @else
+                    <h1 class="text-3xl font-medium font-size-sm header-title">User table    User: Guest</h1>
+                @endif
+                <table class="grid">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach ($users as $user)
+                        <tr>
+                            <td>{{ $user->id }}</td>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td>{{ $user->status }}</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 @endsection

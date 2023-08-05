@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Picture;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminUserController extends Controller
@@ -13,7 +14,6 @@ class AdminUserController extends Controller
      */
     public function index()
     {
-        //dd('This is the AdminUserController index method');
         return view('/admin/admin_user');
     }
 
@@ -22,7 +22,10 @@ class AdminUserController extends Controller
      */
     public function create()
     {
-        //
+        $users = User::all(); // Retrieve all users from the database
+
+        //return view('admin.admin_user_create', ['users' => $users]);
+        return view('admin.admin_user_create', ['users' => $users]);
     }
 
     /**
