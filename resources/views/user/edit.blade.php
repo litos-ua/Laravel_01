@@ -116,6 +116,23 @@
 
                             <!-- ... rest of the form ... -->
                         </div>
+                        <div class="flex flex-col items-center justify-center">
+                            <section class="rounded-b-lg mt-4">
+                                <form class="admin-message" method="POST" action="{{ route("home", 'Some Post') }}">
+                                    @csrf
+                                    <div class="flex justify-center">
+                                        <textarea name="text"  class="text-area w-full shadow-inner p-4 border-0 mb-4 rounded-lg focus:shadow-outline text-2xl @error('text') border-red-500 @enderror" placeholder="You comment..." spellcheck="false"></textarea>
+                                    </div>
+                                    @error('text')
+                                    <p class="text-red-500">Error</p>
+                                    @enderror
+                                    <div class="flex justify-center text-area-button-div">
+                                        <button type="submit" class="text-area-button btn btn-primary">Send</button>
+                                    </div>
+                                </form>
+
+                            </section>
+                        </div>
                     </div>
                 </div>
             </div>

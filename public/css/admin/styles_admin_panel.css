@@ -201,3 +201,32 @@
 }
 
 /*--------------------------------------------End message block-------------------------------------------*/
+
+
+.text-area {
+    margin-left: 35px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-area-button-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ensure the div takes full height of its parent */
+}
+
+
+/* Style the 'Apply' button */
+.text-area-button {
+    padding: 4px 8px;
+    margin-left: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid #0d6efd;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
