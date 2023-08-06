@@ -52,6 +52,27 @@
 @endsection
 @section('content')
     <div class="card">
+        <script>
+            $(document).ready(function () {
+                // Attach a change event listener to the status dropdown
+                $('#status').change(function () {
+                    // Get the initial status value from the data attribute
+                    var initialStatus = $(this).data('initial-status');
+                    // Get the selected status value
+                    var selectedStatus = $(this).val();
+                    // Get the user ID from the hidden input field
+                    var userId = $(this).siblings('input[name="userId"]').val();
+
+                    // Check if the selected status is different from the initial status using strict comparison
+                    if (initialStatus !== selectedStatus) {
+                        // Update the value of the hidden input field with the selected status
+                        $(this).siblings('input[name="userId"]').attr('value', selectedStatus);
+                        // Display a flash message
+                        $('#flash-messages').html('<div class="alert alert-success">User status updated successfully.</div>');
+                    }
+                });
+            });
+        </script>
         <div class="h-screen bg-white flex flex-col space-y-10 justify-center items-center">
             <div class="bg-white w-96-custom shadow-xl rounded p-3">
                 @if (Auth::check())
@@ -66,19 +87,47 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Status</th>
+                        <th>Change status</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach ($users as $user)
-                        <tr>
-                            <td>{{ $user->id }}</td>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->email }}</td>
-                            <td>{{ $user->status }}</td>
-                        </tr>
-                    @endforeach
+                        @foreach ($users as $user)
+                            <tr>
+                                <td class="td-user-id">{{ $user->id }}</td>
+                                <td class="td-user-name">{{ $user->name }}</td>
+                                <td class="td-user-email">{{ $user->email }}</td>
+                                <td class="td-user-status">
+                                    <form class="user-status-form" action="{{ route('admin.user.updateStatus') }}" method="POST">
+                                        @csrf
+                                        <label for="status">Select Status:</label>
+                                        <select name="status" id="status" data-initial-status="{{ $user->status }}">
+                                            <option value="0" {{ $user->status == 0 ? 'selected' : '' }}>Inactive</option>
+                                            <option value="1" {{ $user->status == 1 ? 'selected' : '' }}>Active standard</option>
+                                            <option value="2" {{ $user->status == 2 ? 'selected' : '' }}>Active advanced</option>
+                                            <option value="3" {{ $user->status == 3 ? 'selected' : '' }}>Admin</option>
+                                        </select>
+                                        <input type="hidden" name="userId" value="{{ $user->id }}">
+                                </td>
+                                <td class="td-applay-status">
+                                    <button type="submit">Apply</button>
+                                    </form>
+                                </td>
+                            </tr>
+                      @endforeach
                     </tbody>
                 </table>
+                    <div class="success-message"
+                        @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+                        @if (session('error'))
+                            <div class="alert alert-danger">
+                                {{ session('error') }}
+                            </div>
+                        @endif
+                    </div>
             </div>
         </div>
     </div>

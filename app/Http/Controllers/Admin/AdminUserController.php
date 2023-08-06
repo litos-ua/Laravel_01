@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Picture;
 use App\Models\User;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
 class AdminUserController extends Controller
@@ -18,14 +19,14 @@ class AdminUserController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for updating a user status.
      */
     public function create()
     {
         $users = User::all(); // Retrieve all users from the database
 
         //return view('admin.admin_user_create', ['users' => $users]);
-        return view('admin.admin_user_create', ['users' => $users]);
+        return view('admin.admin_user_update_status', ['users' => $users]);
     }
 
     /**
@@ -59,6 +60,26 @@ class AdminUserController extends Controller
     {
         //
     }
+
+    public function updateStatus(Request $request)
+    {
+        $userId = $request->input('userId');
+        $status = $request->input('status');
+        try{
+        // Update the user's status in the database
+        $user = User::findOrFail($userId);
+        $user->update(['status' => $status]);
+        //session()->flash('success', 'Picture updated successfully!');
+        return redirect()->back()->with('success', 'User status updated successfully.');
+        } catch (QueryException $exception) {
+            // Handle exceptions
+            if ($exception->getCode() == 23000) {
+                return response()->json(['error' => 'Error! Status hasn\'t changed.'], 422);
+            }
+            throw $exception;
+        }
+    }
+
 
     /**
      * Remove the specified resource from storage.

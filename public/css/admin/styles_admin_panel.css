@@ -94,6 +94,10 @@
     width: 100%;
     border-collapse: collapse;
 }
+.user-status-form{
+    padding: 5px 1px 1px 5px!important;
+    margin-bottom: 0px;
+}
 
 .grid td {
     padding: 6px 10px;
@@ -121,6 +125,44 @@
     background-color: #e1e1e1;
 }
 
+
+/* Center the content vertically in the 'Status' column */
+.td-user-status {
+    vertical-align: middle;
+    padding: 6px 10px; /* Adjust padding as needed */
+    margin: 0; /* Remove any margin */
+    text-align: center;
+}
+
+/* Style the 'Apply' button */
+.td-applay-status button {
+    padding: 4px 8px;
+    margin-left: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Center align the button vertically within the 'Change status' cell */
+.td-applay-status {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+
+/*--------------------------------------End Grid------------------------------------------*/
+
+/*-------------------------------------Style the success and error messages---------------*/
+.success-message {
+    text-align: center;
+    margin-top: 10px; /* Adjust margin as needed */
+}
+
+
+
 .w-96-custom {
     width: 180%; /* Override the fixed width */
     padding: 0rem!important;
@@ -143,3 +185,19 @@
     padding: 0.25rem 0.5rem; /* Adjust the padding values as needed */
     font-size: inherit; /* Keep the font size the same */
 }
+
+/*-------------------------------------------Success message block--------------------------------------*/
+
+.success-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: blue;
+    height: 100%; /* Ensures the content is centered vertically as well */
+}
+
+.alert {
+    color: red;
+}
+
+/*--------------------------------------------End message block-------------------------------------------*/

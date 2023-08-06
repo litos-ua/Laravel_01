@@ -67,6 +67,7 @@ Route::middleware("auth:web")->group(function () {
      */
     Route::prefix('admin')->group(function () {
         //Route::resource('user', UserController::class)->only(['index', 'create', 'store', 'show', 'destroy']);
+        Route::post('/user/update-status', [AdminUserController::class, 'updateStatus'])->name('admin.user.updateStatus');
         Route::resource('user', AdminUserController::class)
             ->only(['index', 'create', 'store', 'show', 'destroy'])
             ->names([
