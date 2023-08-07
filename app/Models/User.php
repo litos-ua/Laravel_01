@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\auth\MustVerifyEmail;
+use App\Models\MessageUser;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -61,6 +62,16 @@ class User extends Authenticatable
     public function phones()
     {
         return $this->hasMany(Phone::class, 'user_id', 'id');
+    }
+
+    public function sentMessages()
+    {
+        return $this->hasMany(MessageUser::class, 'sender_id', 'id');
+    }
+
+    public function receivedMessages()
+    {
+        return $this->hasMany(MessageUser::class, 'receiver_id', 'id');
     }
 
 }
