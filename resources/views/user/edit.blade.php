@@ -28,7 +28,7 @@
 @section('menu')
     <div class="list-group">
         <a href="{{ route('home') }}" class="list-group-item list-group-item-action" id="list-group-item">Home</a>
-        <a href="{{ route('home') }}" class="list-group-item list-group-item-action" id="list-group-item">User</a>
+        <a href="{{ route('user.edit') }}" class="list-group-item list-group-item-action" id="list-group-item">User</a>
         <a href="{{ route('logout') }}" class="list-group-item list-group-item-action" id="list-group-item">Logout</a>
     </div>
 @endsection
@@ -41,7 +41,6 @@
                     <div class="card-header">
                         <p>{{ __('User:  ')}} {{ Auth::user()->name }}{{ __('  Profile  ')}}</p>
                         <p>{{ __('Email:  ')}} {{ Auth::user()->email }}{{ __('       Status:  ')}} {{ Auth::user()->status }}</p>
-{{--                        <p>{{ __('Telephone:  ')}}{{ Auth::user()->phones[0]->phonenumber }}</p>--}}
                         @foreach(Auth::user()->phones as $phone)
                             <p>{{ __('Telephone:  ')}} {{ $phone->phonenumber }}</p>
                         @endforeach
@@ -75,9 +74,6 @@
                                 <div class="col-md-6">
                                     <input id="phonenumber" type="text"
                                            class="form-control @error('phonenumber') is-invalid @enderror"
-{{--  doesn't work                         name="phonenumber" value="{{ old('phonenumber', optional($phone)->phonenumber) }}" required>--}}
-{{--  doesn't work                         name="phonenumber" value="{{ old('phonenumber', Auth::user()->phones[0]->phonenumber) }}" required>--}}
-{{--  work                                 name="phonenumber" value="{{ old('phonenumber', Auth::user()->phones[0]->phonenumber) }}" required>--}}
                                            name="phonenumber" value="{{ old('phonenumber', isset(Auth::user()->phones[0]) ? Auth::user()->phones[0]->phonenumber : '') }}"
                                            required  pattern="^\+[0-9]{12}$"
                                            title="Please enter a valid phone number starting with a '+' sign followed by ten digits.">
@@ -99,6 +95,23 @@
                                 </div>
                             </div>
                         </form>
+
+                        <form method="POST" action="{{ route('user.sendMessage') }}">
+                            @csrf
+
+                            <div class="flex justify-center">
+                                <textarea name="message" class="text-area w-full shadow-inner p-4 border-0 mb-4 rounded-lg focus:shadow-outline text-2xl @error('text') border-red-500 @enderror" placeholder="Your comment..." spellcheck="false"></textarea>
+                            </div>
+
+                            @error('text')
+                            <p class="text-red-500">Error</p>
+                            @enderror
+
+                            <div class="flex justify-center text-area-button-div">
+                                <button type="submit" class="text-area-button btn btn-primary">Send</button>
+                            </div>
+                        </form>
+
                         <div class="container">
                             <!-- Display success message if it exists in the session -->
                             @if(session('success'))
@@ -115,23 +128,6 @@
                             @endif
 
                             <!-- ... rest of the form ... -->
-                        </div>
-                        <div class="flex flex-col items-center justify-center">
-                            <section class="rounded-b-lg mt-4">
-                                <form class="admin-message" method="POST" action="{{ route("home", 'Some Post') }}">
-                                    @csrf
-                                    <div class="flex justify-center">
-                                        <textarea name="text"  class="text-area w-full shadow-inner p-4 border-0 mb-4 rounded-lg focus:shadow-outline text-2xl @error('text') border-red-500 @enderror" placeholder="You comment..." spellcheck="false"></textarea>
-                                    </div>
-                                    @error('text')
-                                    <p class="text-red-500">Error</p>
-                                    @enderror
-                                    <div class="flex justify-center text-area-button-div">
-                                        <button type="submit" class="text-area-button btn btn-primary">Send</button>
-                                    </div>
-                                </form>
-
-                            </section>
                         </div>
                     </div>
                 </div>

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class MessageUser extends Model
 {
     use HasFactory;
-    protected $table = 'user_message'; // Specify the custom table name
+    protected $table = 'message_user'; // Specify the custom table name
 
     protected $fillable = ['sender_id', 'receiver_id', 'content'];
 

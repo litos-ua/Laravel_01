@@ -202,7 +202,7 @@
 
 /*--------------------------------------------End message block-------------------------------------------*/
 
-
+/*--------------------------------------------Text area for message---------------------------------------*/
 .text-area {
     margin-left: 35px;
     width: 90%;
@@ -229,4 +229,17 @@
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
+}
+
+/*-------------------------------------------End text area----------------------------------------------------*/
+
+.card-header {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.card-body {
+    margin-top: 0px;
+    padding-bottom: 0px;
+
 }

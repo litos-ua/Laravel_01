@@ -58,9 +58,9 @@ Route::middleware("auth:web")->group(function () {
     /**
      * Routes for ordinary users
      */
-    //Route::resource('user', UserController::class)->only(['edit', 'update']);
     Route::get('/user/edit', [UserController::class, 'editForm'])->name('user.edit');
     Route::put('/user/update', [UserController::class, 'update'])->name('user.update');
+    Route::post('/user/send-message', [UserController::class, 'sendMessage'])->name('user.sendMessage');
 
     /**
      * Routes for administrators (you can use a different prefix if needed)
@@ -68,6 +68,7 @@ Route::middleware("auth:web")->group(function () {
     Route::prefix('admin')->group(function () {
         //Route::resource('user', UserController::class)->only(['index', 'create', 'store', 'show', 'destroy']);
         Route::post('/user/update-status', [AdminUserController::class, 'updateStatus'])->name('admin.user.updateStatus');
+        //Route::get('/messages', [AdminUserController::class, 'viewMessages'])->name('admin.messages');
         Route::resource('user', AdminUserController::class)
             ->only(['index', 'create', 'store', 'show', 'destroy'])
             ->names([

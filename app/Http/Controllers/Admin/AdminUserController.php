@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\MessageUser;
 use App\Models\Picture;
 use App\Models\User;
 use Illuminate\Database\QueryException;
@@ -15,7 +16,10 @@ class AdminUserController extends Controller
      */
     public function index()
     {
-        return view('/admin/admin_user');
+        $messages = MessageUser::orderBy('created_at', 'asc')->take(50)->paginate(5);
+        $a = 1;
+        return view('admin.admin_user', compact('messages'));
+        //return view('/admin/admin_user');
     }
 
     /**
@@ -87,6 +91,12 @@ class AdminUserController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function viewMessages()
+    {
+        $messages = MessageUser::orderBy('created_at', 'desc')->get();
+        return view('admin.admin_user', compact('messages'));
     }
 
 }
