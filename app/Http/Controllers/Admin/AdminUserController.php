@@ -16,10 +16,14 @@ class AdminUserController extends Controller
      */
     public function index()
     {
-        $messages = MessageUser::orderBy('created_at', 'asc')->take(50)->paginate(5);
-        $a = 1;
-        return view('admin.admin_user', compact('messages'));
-        //return view('/admin/admin_user');
+        try {
+            $messages = MessageUser::orderBy('created_at', 'desc')->take(50)->paginate(5);
+            //throw new \Exception("Simulated exception for testing");
+            return view('admin.admin_user_with_chat', compact('messages'));
+        } catch (\Exception $e) {
+            session()->flash('error_message', 'The Error when displaying messages from users.');
+            return view('admin.error.error_page', ['error' => $e->getMessage()]);
+        }
     }
 
     /**
@@ -27,10 +31,13 @@ class AdminUserController extends Controller
      */
     public function create()
     {
-        $users = User::all(); // Retrieve all users from the database
-
-        //return view('admin.admin_user_create', ['users' => $users]);
-        return view('admin.admin_user_update_status', ['users' => $users]);
+        try {
+            $users = User::all(); // Retrieve all users from the database
+            return view('admin.admin_user_update_status', ['users' => $users]);
+        } catch (\Exception $e) {
+            session()->flash('error_message', 'The Error of creating User model.');
+            return view('admin.error.error_page', ['error' => $e->getMessage()]);
+        }
     }
 
     /**
@@ -93,10 +100,9 @@ class AdminUserController extends Controller
         //
     }
 
-    public function viewMessages()
+    public function error()
     {
-        $messages = MessageUser::orderBy('created_at', 'desc')->get();
-        return view('admin.admin_user', compact('messages'));
+        return view('admin.error.error_page');
     }
 
 }
