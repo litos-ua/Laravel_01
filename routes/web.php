@@ -70,6 +70,7 @@ Route::middleware("auth:web")->group(function () {
         Route::post('/user/update-status', [AdminUserController::class, 'updateStatus'])->name('admin.user.updateStatus');
         //Route::get('/messages', [AdminUserController::class, 'viewMessages'])->name('admin.messages');
         Route::get('/error', [AdminUserController::class, 'error'])->name('admin.error');
+        Route::get('/picture/error', [AdminUserPictureController::class, 'error'])->name('admin.picture.error');
         Route::resource('user', AdminUserController::class)
             ->only(['index', 'create', 'store', 'show', 'destroy'])
             ->names([

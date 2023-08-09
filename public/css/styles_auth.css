@@ -73,12 +73,9 @@ button:hover{
 align-items: center; /* Justify text center */
 justify-content: center; /* Justify text center */
 font-size:1.4vw; /* Масштабируем текст кнопки */
-/*width: 250px;*/
-/*height: 70px;*/
 height: 3vw; /* Масштабируем размер кнопки о вертикали */
 width: 12vw; /* Масштабируем размер кнопки по горизонтали*/
 margin: auto;
-
 }
 
 #exist_account{
@@ -100,3 +97,16 @@ form {
     margin-left: 50px;
     color: red;
 }
+
+/*-------------------------------------------Forget password-------------------------------------------------*/
+#forget-button{
+    display: flex; /* Justify text center */
+    align-items: center; /* Justify text center */
+    justify-content: center; /* Justify text center */
+    font-size:1.4vw; /* Масштабируем текст кнопки */
+    height: 3vw; /* Масштабируем размер кнопки о вертикали */
+    width: 12vw; /* Масштабируем размер кнопки по горизонтали*/
+    margin: auto;
+}
+
+

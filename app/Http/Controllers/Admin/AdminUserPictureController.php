@@ -22,22 +22,6 @@ class AdminUserPictureController extends Controller
      */
     public function index(Request $request)
     {
-//        $picturesByVacations = Vacation::join('pictures', 'vacations.id_cat', '=', 'pictures.category')
-//            ->where('pictures.fototype', '>', 0)
-//            ->orderBy('vacations.id_cat')
-//            ->orderBy('vacations.category')
-//            ->orderBy('pictures.filename')
-//            ->orderBy('pictures.description')
-//            ->select('vacations.id_cat', 'vacations.category', 'pictures.filename', 'pictures.description')
-//            ->get();
-//
-//        $vacationsWithPictures = new LengthAwarePaginator(
-//            $picturesByVacations->forPage($request->input('page', 1), 18),
-//            $picturesByVacations->count(),
-//            18,
-//            $request->input('page', 1),
-//            ['path' => $request->url(), 'query' => $request->query()]
-//        );
 
         $picturesByVacations = Vacation::join('pictures', 'vacations.id_cat', '=', 'pictures.category')
             ->where('pictures.fototype', '>', 0)
@@ -167,4 +151,10 @@ class AdminUserPictureController extends Controller
     {
         //
     }
+
+    public function error()
+    {
+        return view('admin.error.error_page');
+    }
+
 }
