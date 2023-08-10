@@ -8,6 +8,8 @@ use App\Http\Controllers\PictureController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\VacationController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Admin\UserController;
@@ -38,12 +40,24 @@ Route::get('/my_page', function () {return 'This is my page!';});
 Route::get('/', [MainController::class, 'root'])->name('root');
 Route::get('/home', [MainController::class, 'index'])->name('home');
 
+//Auth::routes(['verify' => true]);
 
 Route::middleware("auth:web")->group(function () {
+
+    Route::get('/email/verify', function () {
+        return view('auth.verify-email');
+    })->middleware('auth')->name('verification.notice');
+    Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+        $request->fulfill();
+
+        return redirect('/home');
+    })->middleware(['auth', 'signed'])->name('verification.verify');
+
+
     Route::get ('/logout', [AuthController::class, 'logout'])->name('logout');
 
-    Route::post('/search', [SearchController::class,'search'])->name('search');
-
+    //Route::post('/search', [SearchController::class,'search'])->name('search');
+    Route::middleware(['auth', 'verified'])->post('/search', [SearchController::class, 'search'])->name('search');
     Route::get('/vacation', [VacationController::class, 'getAllVacationsFilenames'])->name('vacation');
 
     Route::get('/gallery/{vacCat}', [GalleryController::class, 'getAllPicturesByVacCode'])->where('vacCat', '[0-9]+')->name('gallery');
@@ -61,7 +75,7 @@ Route::middleware("auth:web")->group(function () {
     Route::get('/user/edit', [UserController::class, 'editForm'])->name('user.edit');
     Route::put('/user/update', [UserController::class, 'update'])->name('user.update');
     Route::put('/user/change-password', [UserController::class, 'changePassword'])->name('user.changePassword');
-    Route::post('/user/send-message', [UserController::class, 'sendMessage'])->name('user.sendMessage');
+    Route::post('/user/send-message', [UserController::class, 'sendMessage'])->name('user.sendMessage'); //Внутренний мессенджер
 
     /**
      * Routes for administrators (you can use a different prefix if needed)
@@ -116,6 +130,9 @@ Route::middleware("guest:web")->group(function () {
 
     Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
     Route::post('/register_process', [AuthController::class, 'register'])->name('register_process');
+
+
+
 
     Route::get('/forgot', [AuthController::class, 'showForgotForm'])->name('forgot');
     Route::post('/forgot_process', [AuthController::class, 'forgot'])->name('forgot_process');

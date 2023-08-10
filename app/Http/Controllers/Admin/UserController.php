@@ -93,6 +93,11 @@ class UserController extends Controller
         }
     }
 
+    /**
+     * Changing password with werification current
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function changePassword(Request $request)
     {
         try {

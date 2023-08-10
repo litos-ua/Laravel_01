@@ -80,6 +80,8 @@ class AuthController extends Controller
             "password" => bcrypt($data["password"])
         ]);
 
+        event(new Registered($user));
+
         if($user) {
             //event(new Registered($user));
             auth("web")->login($user);

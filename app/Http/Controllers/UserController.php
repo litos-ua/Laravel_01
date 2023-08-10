@@ -23,7 +23,8 @@ class UserController extends Controller
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = Hash::make($request->password);
+        //$user->password = Hash::make($request->password);
+        $user->password = bcrypt($request->password);
         $user->save();
 
         // Optionally, you can authenticate the user after registration

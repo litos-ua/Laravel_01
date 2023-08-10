@@ -27,5 +27,5 @@
 
 
 @section('content')
-    <h2>Verified</h2>
+    <h2>You need to verify your email address.</h2>
 @endsection
