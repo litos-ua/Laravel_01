@@ -60,6 +60,7 @@ Route::middleware("auth:web")->group(function () {
      */
     Route::get('/user/edit', [UserController::class, 'editForm'])->name('user.edit');
     Route::put('/user/update', [UserController::class, 'update'])->name('user.update');
+    Route::put('/user/change-password', [UserController::class, 'changePassword'])->name('user.changePassword');
     Route::post('/user/send-message', [UserController::class, 'sendMessage'])->name('user.sendMessage');
 
     /**

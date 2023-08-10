@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -90,6 +91,38 @@ class UserController extends Controller
             Session::flash('error', 'Your data hasn\'t been updated. An error occurred while updating your data!');
             return redirect()->route('user.edit');
         }
+    }
+
+    public function changePassword(Request $request)
+    {
+        try {
+            $user = Auth::user();
+
+            $request->validate([
+                "current_password" => ["required"],
+                "new_password" => ["required", "confirmed"],
+            ]);
+
+            $currentPassword = $request->input('current_password');
+
+            // Attempt to authenticate the user with the provided current password
+            if (!Auth::attempt(['email' => $user->email, 'password' => $currentPassword])) {
+                return redirect()->back()->withErrors(['current_password' => 'The current password is incorrect']);
+            }
+
+            // Update the user's password
+            //$newPassword = Hash::make($request->input('new_password'));
+            $newPassword = bcrypt($request->input('new_password'));
+            $user->password = $newPassword;
+            $user->save();
+
+            Session::flash('success', 'Password changed successfully');
+        } catch (\Exception $e) {
+            // Handle any exceptions that may occur
+            Session::flash('error', 'An error occurred while changing the password');
+        }
+
+        return redirect()->back();
     }
 
 

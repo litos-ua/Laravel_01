@@ -61,63 +61,6 @@
 
                     <div class="card-body">
 
-{{--                        <h3>Admin Incoming Messages</h3>--}}
-{{--                        <div>--}}
-{{--                            @foreach($messages as $message)--}}
-{{--                                <div class="message">--}}
-{{--                                    <strong>ID:</strong> {{ $message->sender->id }}<strong>&nbsp&nbsp&nbspSender:</strong> {{ $message->sender->name }}--}}
-{{--                                    <strong>&nbsp&nbsp&nbspSent at:</strong> {{ $message->created_at }}<br>--}}
-{{--                                    <strong>Receiver:</strong> {{ $message->receiver->name }} <br>--}}
-{{--                                    <strong>Content:</strong> {{ $message->content }} <br>--}}
-{{--                                    <strong>Sent at:</strong> {{ $message->created_at }}--}}
-{{--                                </div>--}}
-{{--                                <hr>--}}
-{{--                            @endforeach--}}
-{{--                        </div>--}}
-{{--                        <div class="container">--}}
-{{--                            <div class="row justify-content-center">--}}
-{{--                                <div class="col-md-8">--}}
-{{--                                    <div class="pagination justify-content-center mt-4">--}}
-{{--                                        {{ $messages->links() }}--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                        <form method="POST" action="{{ route('user.sendMessage') }}">--}}
-{{--                            @csrf--}}
-
-{{--                            <div class="flex justify-center">--}}
-{{--                                <textarea name="message" class="text-area w-full shadow-inner p-4 border-0 mb-4 rounded-lg focus:shadow-outline text-2xl--}}
-{{--                                @error('text') border-red-500 @enderror" placeholder="Your message..." spellcheck="false"></textarea>--}}
-{{--                            </div>--}}
-
-{{--                            @error('text')--}}
-{{--                            <p class="text-red-500">Error</p>--}}
-{{--                            @enderror--}}
-
-{{--                            <div class="flex justify-center text-area-button-div">--}}
-{{--                                <button type="submit" class="text-area-button btn btn-primary">Send</button>--}}
-{{--                            </div>--}}
-{{--                        </form>--}}
-
-{{--                        <div class="container">--}}
-{{--                            <!-- Display success message if it exists in the session -->--}}
-{{--                            @if(session('success'))--}}
-{{--                                <div class="alert alert-success">--}}
-{{--                                    {{ session('success') }}--}}
-{{--                                </div>--}}
-{{--                            @endif--}}
-
-{{--                            <!-- Display error message if it exists in the session -->--}}
-{{--                            @if(session('error'))--}}
-{{--                                <div class="alert alert-danger">--}}
-{{--                                    {{ session('error') }}--}}
-{{--                                </div>--}}
-{{--                            @endif--}}
-
-                            <!-- ... rest of the form ... -->
-                        </div>
                     </div>
                 </div>
             </div>
