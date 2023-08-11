@@ -151,7 +151,8 @@
         @section('mainContent')
         <main>
             @if (isset(Auth::user()->status))
-                <p>User Status:   {{Auth::user()->status}} &nbsp&nbsp&nbsp Status type: {{ gettype(Auth::user()->status) }}</p>
+                <p>User Status:   {{Auth::user()->status}} &nbsp&nbsp&nbsp User Name:   {{Auth::user()->name}}
+                    {{--Status type: {{ gettype(Auth::user()->status) }}--}}</p>
             @endif
             <section class="py-3 text-center container">
                 <div>

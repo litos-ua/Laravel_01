@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Admin\UserController;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,22 +53,40 @@ Route::middleware("auth:web")->group(function () {
 
         return redirect('/home');
     })->middleware(['auth', 'signed'])->name('verification.verify');
-
+//    Route::post('/email/verification-notification', function (Request $request) {
+//        $request->user()->sendEmailVerificationNotification();
+//
+//        return back()->with('message', 'Verification link sent!');
+//    })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+    Route::post('/email/verification-notification', function (Request $request) {
+        try {
+            $request->user()->sendEmailVerificationNotification();
+            return back()->with('message', 'Verification link sent!');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Failed to send verification link.');
+        }
+    })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
     Route::get ('/logout', [AuthController::class, 'logout'])->name('logout');
 
-    //Route::post('/search', [SearchController::class,'search'])->name('search');
-    Route::middleware(['auth', 'verified'])->post('/search', [SearchController::class, 'search'])->name('search');
+
     Route::get('/vacation', [VacationController::class, 'getAllVacationsFilenames'])->name('vacation');
+    Route::middleware(['auth', 'verified'])->group(function () {
+        //Route::middleware(['auth', 'verified'])->post('/search', [SearchController::class, 'search'])->name('search');
+        Route::post('/search', [SearchController::class, 'search'])->name('search');
 
-    Route::get('/gallery/{vacCat}', [GalleryController::class, 'getAllPicturesByVacCode'])->where('vacCat', '[0-9]+')->name('gallery');
+        //Route::get('/vacation', [VacationController::class, 'getAllVacationsFilenames'])->name('vacation');
 
-    Route::get('/picture/{currentFileName}', [PictureController::class, 'pictureForCarusel'])->name('picture');
+        Route::get('/gallery/{vacCat}', [GalleryController::class, 'getAllPicturesByVacCode'])
+            ->where('vacCat', '[0-9]+')->name('gallery');
 
-    Route::get('/search/picture/{currentFileName}', [PictureController::class, 'pictureForCarusel'])->name('search/picture');
+        Route::get('/picture/{currentFileName}', [PictureController::class, 'pictureForCarusel'])->name('picture');
 
-    Route::get('/pictures/create', [PictureController::class, 'create'])->name('create.picture');
-    Route::post('/pictures/create_process', [PictureController::class, 'store'])->name('insert.picture');
+        Route::get('/search/picture/{currentFileName}', [PictureController::class, 'pictureForCarusel'])->name('search/picture');
+
+        Route::get('/pictures/create', [PictureController::class, 'create'])->name('create.picture');
+        Route::post('/pictures/create_process', [PictureController::class, 'store'])->name('insert.picture');
+    });
 
     /**
      * Routes for ordinary users

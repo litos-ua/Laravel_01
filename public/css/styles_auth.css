@@ -23,6 +23,14 @@ button{
     background-color: #7f94b4 !important;
     color: white !important;
 }
+
+#btn-primary {   /*button for verification route*/
+    background-color: #7f94b4 !important;
+    color: white !important;
+    margin: 20px;
+}
+
+
 button:hover{
     background: #3d619a;
 }
@@ -70,18 +78,18 @@ button:hover{
 
 #signup-button{
     display: flex; /* Justify text center */
-align-items: center; /* Justify text center */
-justify-content: center; /* Justify text center */
-font-size:1.4vw; /* Масштабируем текст кнопки */
-height: 3vw; /* Масштабируем размер кнопки о вертикали */
-width: 12vw; /* Масштабируем размер кнопки по горизонтали*/
-margin: auto;
+    align-items: center; /* Justify text center */
+    justify-content: center; /* Justify text center */
+    font-size:1.4vw; /* Масштабируем текст кнопки */
+    height: 3vw; /* Масштабируем размер кнопки о вертикали */
+    width: 12vw; /* Масштабируем размер кнопки по горизонтали*/
+    margin: auto;
 }
 
 #exist_account{
     display: flex; /*Justify text center */
-align-items: center; /* Justify text center */
-justify-content: center; /*Justify text center */
+    align-items: center; /* Justify text center */
+    justify-content: center; /*Justify text center */
 }
 
 h1 {
