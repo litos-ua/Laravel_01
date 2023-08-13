@@ -46,12 +46,6 @@
                         @csrf
                         <input type="hidden" name="id" value="{{ Auth::id() }}">
                         <input type="hidden" name="hash" value="{{ sha1(Auth::user()->getEmailForVerification()) }}">
-                        @if(session('message'))
-                            <div class="alert alert-success">{{ session('message') }}</div>
-                        @endif
-                        @if(session('error'))
-                            <div class="alert alert-danger">{{ session('error') }}</div>
-                        @endif
                         <button type="submit" class="btn btn-primary" id="btn-primary">
                             {{ __('Verification') }}
                         </button>
@@ -61,6 +55,14 @@
                             document.getElementById('verification-form').submit();
                         });
                     </script>
+                </div>
+                <div>
+                    @if(session('message'))
+                        <div class="alert alert-success">{{ session('message') }}</div>
+                   @endif
+                    @if(session('error'))
+                        <div class="alert alert-danger">{{ session('error') }}</div>
+                   @endif
                 </div>
             </div>
 

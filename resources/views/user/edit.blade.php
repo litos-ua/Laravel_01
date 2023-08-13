@@ -27,9 +27,9 @@
 </head>
 @section('menu')
     <div class="list-group">
-        <a href="{{ route('home') }}" class="list-group-item list-group-item-action" id="list-group-item">Home</a>
-        <a href="{{ route('user.edit') }}" class="list-group-item list-group-item-action" id="list-group-item">User</a>
-        <a href="{{ route('logout') }}" class="list-group-item list-group-item-action" id="list-group-item">Logout</a>
+        <a href="{{ route('home') }}" class="list-group-item list-group-item-action" id="list-group-item">{{ __('auth.home') }}</a>
+        <a href="{{ route('user.edit') }}" class="list-group-item list-group-item-action" id="list-group-item">{{ __('auth.user') }}</a>
+        <a href="{{ route('logout') }}" class="list-group-item list-group-item-action" id="list-group-item">{{ __('auth.logout') }}</a>
     </div>
 @endsection
 
@@ -52,7 +52,7 @@
                             @method('PUT')
 
                             <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('auth.name') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
@@ -69,7 +69,7 @@
 
                             <div class="form-group row">
                                 <label for="phonenumber"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Phone Number') }}</label>
+                                       class="col-md-4 col-form-label text-md-right">{{ __('auth.phone_num') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="phonenumber" type="text"
@@ -89,7 +89,7 @@
                                 <div class="col-md-8 offset-md-4">
                                     <div class="d-flex justify-content-center">
                                         <button type="submit" class="btn btn-primary">
-                                            {{ __('Update Profile') }}
+                                            {{ __('auth.update_prof') }}
                                         </button>
                                     </div>
                                 </div>
@@ -101,7 +101,7 @@
                             @csrf
                             @method('PUT')
                             <div class="form-group row">
-                                <label for="current_password" class="col-md-4 col-form-label text-md-right">{{ __('Current Password') }}</label>
+                                <label for="current_password" class="col-md-4 col-form-label text-md-right">{{__('auth.cur_pas')}}</label>
 
                                 <div class="col-md-6">
                                     <input id="current_password" type="password" class="form-control @error('current_password') is-invalid @enderror"
@@ -116,7 +116,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="new_password" class="col-md-4 col-form-label text-md-right">{{ __('New Password') }}</label>
+                                <label for="new_password" class="col-md-4 col-form-label text-md-right">{{__('auth.new_pas')}}</label>
 
                                 <div class="col-md-6">
                                     <input id="new_password" type="password" class="form-control @error('new_password') is-invalid @enderror"
@@ -131,7 +131,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="new_password_confirmation" class="col-md-4 col-form-label text-md-right">{{ __('Confirm New Password') }}</label>
+                                <label for="new_password_confirmation" class="col-md-4 col-form-label text-md-right">{{__('auth.conf_new_pas')}}</label>
 
                                 <div class="col-md-6">
                                 <input id="new_password_confirmation" type="password" class="form-control"
@@ -142,7 +142,7 @@
                                 <div class="col-md-8 offset-md-4">
                                     <div class="d-flex justify-content-center">
                                         <button type="submit" class="btn btn-primary">
-                                            {{ __('Change password') }}
+                                            {{ __('auth.but_change_pas') }}
                                         </button>
                                     </div>
                                 </div>
@@ -154,7 +154,8 @@
                             @csrf
 
                             <div class="flex justify-center">
-                                <textarea name="message" class="text-area w-full shadow-inner p-4 border-0 mb-4 rounded-lg focus:shadow-outline text-2xl @error('text') border-red-500 @enderror" placeholder="Your comment..." spellcheck="false"></textarea>
+                                <textarea name="message" class="text-area w-full shadow-inner p-4 border-0 mb-4 rounded-lg focus:shadow-outline text-2xl
+                                @error('text') border-red-500 @enderror" placeholder="{{ __('auth.comment_1') }}" spellcheck="false"></textarea>
                             </div>
 
                             @error('text')
@@ -162,7 +163,7 @@
                             @enderror
 
                             <div class="flex justify-center text-area-button-div">
-                                <button type="submit" class="text-area-button btn btn-primary">Send</button>
+                                <button type="submit" class="text-area-button btn btn-primary">{{ __('auth.send') }}</button>
                             </div>
                         </form>
 

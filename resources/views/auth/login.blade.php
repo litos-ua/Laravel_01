@@ -45,7 +45,7 @@
 
                     <input name="password" id="password" type="password"
                            class="w-full h-12 border border-gray-800 rounded px-3 @error('password') border-red-500 @enderror"
-                           placeholder="Пароль"/>
+                           placeholder="Password"/>
 
                     @error('password')
                     <p class="text-red-500">{{ $message }}</p>

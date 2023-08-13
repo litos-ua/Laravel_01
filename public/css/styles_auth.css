@@ -116,5 +116,19 @@ form {
     width: 12vw; /* Масштабируем размер кнопки по горизонтали*/
     margin: auto;
 }
+/*--------------------------------------------End forget password-----------------------------------------------*/
 
-
+/*----------------------------------------------------------Switch language-------------------------------------------*/
+.language-selector {
+    position: relative!important;
+}
+.flag-icon {
+    display: inline-block!important;
+    width: 30px!important; /* Adjust the width and height as needed */
+    height: 20px!important;
+    background-size: cover!important;
+    margin-left: 20px!important; /* Optional - Add some space between the text and the flag */
+    margin-top: 10px!important;
+    float: right!important; /* Align the flags to the right */
+}
+/*---------------------------------------------------------End switch language----------------------------------------*/

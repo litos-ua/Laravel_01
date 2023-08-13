@@ -34,9 +34,7 @@
             <li><a class="dropdown-item" href="{{ route(Route::currentRouteName(),['vacCat' => 23]) }}" data-language="en">English</a></li>
             <li><a class="dropdown-item" href="{{ route(Route::currentRouteName(),['vacCat' => 23]) }}" data-language="pl">Polish</a></li>
             <li><a class="dropdown-item" href="{{ route(Route::currentRouteName(),['vacCat' => 23]) }}" data-language="uk">Ukrainian</a></li>
-{{--            <li><a class="dropdown-item" href="{{ route(Route::currentRouteName(),['vacCat' => $vacation->id_cat]) }}" data-language="en">English</a></li>--}}
-{{--            <li><a class="dropdown-item" href="{{ route(Route::currentRouteName(),['vacCat' => $vacation->id_cat]) }}" data-language="pl">Polish</a></li>--}}
-{{--            <li><a class="dropdown-item" href="{{ route(Route::currentRouteName(),['vacCat' => $vacation->id_cat]) }}" data-language="uk">Ukrainian</a></li>--}}
+
         </ul>
     </div>
 @endsection
