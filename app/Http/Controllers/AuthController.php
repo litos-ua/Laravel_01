@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -89,5 +90,13 @@ class AuthController extends Controller
         }
 
         return redirect(route("home"));
+    }
+
+    public function updateLanguage(Request $request)
+    {
+        $language = $request->input('language');
+        Session::put('selectedLanguage', $language);
+        $a = 1;
+        return response()->json(['message' => 'Language updated']);
     }
 }

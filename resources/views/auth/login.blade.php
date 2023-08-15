@@ -23,6 +23,7 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+{{--    <script src="{{ asset('js/local/flag_ses.js') }}"></script>--}}
 </head>
 
 
@@ -45,7 +46,7 @@
 
                     <input name="password" id="password" type="password"
                            class="w-full h-12 border border-gray-800 rounded px-3 @error('password') border-red-500 @enderror"
-                           placeholder="Password"/>
+                           placeholder="{{ __('auth.password') }}"/>
 
                     @error('password')
                     <p class="text-red-500">{{ $message }}</p>
@@ -53,16 +54,16 @@
 
                     <div>
                         <a href="{{ route("forgot") }}" id="exist_account"
-                           class="font-medium text-blue-900 hover:bg-blue-300 rounded-md p-2">Forget password?</a>
+                           class="font-medium text-blue-900 hover:bg-blue-300 rounded-md p-2">{{ __('auth.forget_pas') }}</a>
                     </div>
 
                     <div>
                         <a href="{{ route("register") }}" id="exist_account"
-                           class="font-medium text-blue-900 hover:bg-blue-300 rounded-md p-2">Sign Up</a>
+                           class="font-medium text-blue-900 hover:bg-blue-300 rounded-md p-2">{{ __('auth.sign-up') }}</a>
                     </div>
 
                     <button type="submit" id="signup-button"
-                            class="text-center w-full bg-blue-900 rounded text-white py-3 font-medium">Sign In
+                            class="text-center w-full bg-blue-900 rounded text-white py-3 font-medium">{{ __('auth.sign-in') }}
                     </button>
                 </form>
             </div>

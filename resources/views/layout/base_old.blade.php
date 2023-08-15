@@ -7,58 +7,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
     <link rel="stylesheet" href="{{ asset('/css/styles_auth.css') }}">
-    <script src="{{ asset('js/local/flag.js') }}"></script>
+{{--    @if(Auth::check())--}}
+{{--        <script src="{{ asset('js/local/flag.js') }}"></script>--}}
+{{--    @else--}}
+{{--        <script src="{{ asset('js/local/flag_ses.js') }}"></script>--}}
+{{--    @endif--}}
     <script src="{{ asset('js/app.js') }}"></script>
-
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script>
-        $(document).ready(function () {
-            // Mapping of language codes to flag image filenames
-            var languageFlags = {
-                'en': 'english-flag.png',
-                'pl': 'poland-flag.png',
-                'uk': 'ukraine-flag.png',
-                // Add more language codes and their corresponding flag filenames
-            };
 
-            // Function to update the flag icon in the language dropdown
-            function updateFlagIcon(language) {
-                var flagFilename = languageFlags[language];
-                var flagImageUrl = '/pictures/local/flags/' + flagFilename;
-                $('.flag-icon').attr('src', flagImageUrl);
-
-                // Save the selected language in a cookie (unencrypted) with path '/'
-                document.cookie = 'selectedLanguage=' + language + '; path=/;';
-            }
-
-            // Get the selected language from the cookie or set it to the default value ('en')
-            var selectedLanguage = getCookie('selectedLanguage') || 'en';
-
-            // Initialize the flag icon with the default selected language
-            updateFlagIcon(selectedLanguage);
-
-            // Handle language selection and update the flag icon
-            $('.dropdown-menu a').on('click', function () {
-                var language = $(this).data('language');
-                updateFlagIcon(language);
-
-                // Update the selectedLanguage variable and save it in the cookie
-                selectedLanguage = language;
-                document.cookie = 'selectedLanguage=' + selectedLanguage + '; path=/;';
-            });
-
-            // Helper function to get cookie value by name
-            function getCookie(name) {
-                var value = '; ' + document.cookie;
-                var parts = value.split('; ' + name + '=');
-                if (parts.length === 2) return parts.pop().split(';').shift();
-                return null; // Return null if the cookie is not set
-            }
-        });
-    </script>
    </head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+        <script src="{{ asset('js/local/flag.js') }}"></script>
    <body>
    {{-- @section('body') --}}
   <header>
@@ -120,5 +82,6 @@
     </div>
     {{-- @endsection --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+{{--   <script src="{{ asset('js/local/flag_ses.js') }}"></script>--}}
 </body>
 </html>

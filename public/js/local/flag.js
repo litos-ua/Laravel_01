@@ -111,7 +111,6 @@ $(document).ready(function () {
         'uk': 'ukraine-flag.png',
         // Add more language codes and their corresponding flag filenames
     };
-
     // Function to update the flag icon in the language dropdown
     function updateFlagIcon(language) {
         var flagFilename = languageFlags[language];
@@ -130,6 +129,7 @@ $(document).ready(function () {
 
     // Handle language selection and update the flag icon
     $('.dropdown-menu a').on('click', function () {
+        //alert('Document ready. Button click. Flag.js');
         var language = $(this).data('language');
         updateFlagIcon(language);
 

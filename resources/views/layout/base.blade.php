@@ -109,11 +109,13 @@
                             {{__('messages.login_but')}}
                         </button>
                         @endif
-                        <button type="button"
+                        @if (!Auth::check())
+                            <button type="button"
                                 class="btn btn-warning"
                                 onclick="window.location.href= '/register'">
                             {{__('messages.signup_but')}}
                         </button>
+                        @endif
                             @if (Auth::check())
                                 <button type="button"
                                         class="btn btn-outline-light me-2"
