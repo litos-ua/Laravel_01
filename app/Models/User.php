@@ -64,11 +64,19 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Phone::class, 'user_id', 'id');
     }
 
+    /**
+     * Only for change internal messages. No for email.
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function sentMessages()
     {
         return $this->hasMany(MessageUser::class, 'sender_id', 'id');
     }
 
+    /**
+     * Only for change internal messages. No for email.
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function receivedMessages()
     {
         return $this->hasMany(MessageUser::class, 'receiver_id', 'id');

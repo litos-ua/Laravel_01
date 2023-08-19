@@ -7,6 +7,7 @@ return [
     'Крым Магарач 2013' => 'Crimea Magarach 2013',
     'Крым Ялта 2013' => 'Crimea Yalta 2013',
     'Крым Судак 2014' =>'Crimea Sudak 2014',
+    'Германия Берлин 2015' => 'Germany Berlin 2015',
     'Польша Гданьск 2016'=>	'Poland Gdansk 2016',
     'Польша Сопот 2016'	=>'Poland Sopot 2016',
     'Польша Торунь 2016' => 'Poland Torun 2016',

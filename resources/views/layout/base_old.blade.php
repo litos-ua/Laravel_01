@@ -6,7 +6,10 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
-    <link rel="stylesheet" href="{{ asset('/css/styles_auth.css') }}">
+    @section('css_old')
+        <link rel="stylesheet" href="{{ asset('/css/styles_auth.css') }}">
+    @show
+    @stack('additional_styles')
 {{--    @if(Auth::check())--}}
 {{--        <script src="{{ asset('js/local/flag.js') }}"></script>--}}
 {{--    @else--}}

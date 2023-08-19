@@ -96,7 +96,6 @@ class AuthController extends Controller
     {
         $language = $request->input('language');
         Session::put('selectedLanguage', $language);
-        $a = 1;
         return response()->json(['message' => 'Language updated']);
     }
 }

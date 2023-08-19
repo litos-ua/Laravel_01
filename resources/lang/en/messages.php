@@ -5,6 +5,8 @@ return [
     'album' => 'Album',
     'about_text' => 'Add some information about the album below, the author, or any other background context.',
     'contact' => 'Contact',
+    'contact_me' => 'Contact with me',
+    'send_but' => 'Send',
     'input_del' => 'Input/Delete',
     'pic_insert' => 'Photo insert',
     'vac_insert' => 'Vacations insert',
@@ -15,6 +17,7 @@ return [
     'view_gal' => 'View gallery',
     'to_top' => 'Back to top',
     'album_example' => 'Album example is &copy; Bootstrap,  &copy; PHP,  &copy; Laravel',
+
 
     'home_but' => 'Home',
     'search_but' => 'Search',

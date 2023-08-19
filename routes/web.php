@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Mail\SendContactEmailController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,10 +41,13 @@ Route::get('/my_page', function () {return 'This is my page!';});
 
 Route::get('/', [MainController::class, 'root'])->name('root');
 Route::get('/home', [MainController::class, 'index'])->name('home');
-//Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-//Route::post('/login_process', [AuthController::class, 'login'])->name('login_process');
 
-//Auth::routes(['verify' => true]);
+/**
+ * Routes for sending contact email
+ */
+Route::get('/contact', [SendContactEmailController::class, 'showForm'])->name('contact.emailForm');
+Route::post('/contact', [SendContactEmailController::class, 'sendEmail'])->name('contact.send');
+
 
 Route::middleware("auth:web")->group(function () {
 
@@ -157,6 +161,8 @@ Route::middleware("guest:web")->group(function () {
     Route::get('/api/pictures/{id}', [PictureController::class, 'show']);
     //Route::post('/api/picturesg', [PictureController::class, 'showByQuery'])->name('api_picturesg'); //Постмен
     Route::get('/api/vacations/{id}', [VacationController::class, 'show']);
+
+
 });
 
 

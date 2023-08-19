@@ -24,11 +24,11 @@ background-size: cover; /*{# contain #}*/
     }#}*/
 
 #contact {
-    margin: 0px 0px 0px 50px;
+    margin: 0px 0px 0px 10px;
 }
 
 #about {
-    margin: 0px 0px 0px 50px;
+    margin: 0px 0px 0px 10px;
 }
 /*Делаем, чтобы кнопки в заголовке занимали 80*/
 #container2 {

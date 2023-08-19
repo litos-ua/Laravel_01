@@ -1,0 +1,15 @@
+#message {
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+#message-button {
+    /*display: flex; !* Justify text center *!*/
+    /*align-items: center; !* Justify text center *!*/
+    justify-content: center; /* Justify text center */
+    font-size: 1.4vw; /* Масштабируем текст кнопки */
+    height: 3vw; /* Масштабируем размер кнопки о вертикали */
+    width: 12vw; /* Масштабируем размер кнопки по горизонтали*/
+    margin: auto;
+    color: gold;
+}

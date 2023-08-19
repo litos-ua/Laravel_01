@@ -4,6 +4,8 @@ return [
     'about' => 'O albumie',
     'about_text' => 'Dodaj informacje o albumie poniżej, autorze lub innym kontekście tła.',
     'contact' => 'Kontakt',
+    'contact_me' => 'Skontaktuj ze mną',
+    'send_but' => 'Wyślij',
     'input_del' => 'Wprowadź/Usuń',
     'pic_insert' => 'Wstaw zdjęcie',
     'vac_insert' => 'Wstaw wakacje',

@@ -63,8 +63,8 @@
                             <h4 class="text-white">{{__('messages.contact')}}</h4>
                             <ul class="list-unstyled">
                                 <li><a href="vacations/all" class="text-white" target="_blank">Follow on Twitter</a></li>
-                                <li><a href="https://www.facebook.com/profile.php?id=100014076607141" class="text-white">Like on Facebook</a></li>
-                                <li><a href="#" class="text-white">Email me</a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=100014076607141" class="text-white">Link to Facebook</a></li>
+                                <li><a href="{{ route("contact.emailForm") }}" class="text-white">Email me</a></li>
                             </ul>
                         </div>
 
