@@ -22,9 +22,16 @@ class SendContactEmailController extends Controller
         ]);
 
         // Send the email
+//        Mail::raw($request->input('message'), function ($message) {
+//            $message->to('isr720912@gmail.com')->subject('New Contact Message');
+//        });
+
         Mail::raw($request->input('message'), function ($message) {
-            $message->from(Auth::user()->name)->to('isr720912@gmail.com')->subject('New Contact Message');
+            $message->from(config('mail.from.address'), Auth::user()->name)
+                ->to('isr720912@gmail.com')
+                ->subject('New Contact Message');
         });
+
 
         return redirect()->route('contact.emailForm')->with('success', 'Message sent successfully.');
     }
