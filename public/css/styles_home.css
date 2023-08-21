@@ -160,7 +160,33 @@ body {
     flex-direction: column;
 }
 
-#footer {
-    margin-top: auto;
-}
+/* Footer */
+/*#footer {*/
+/*    margin-top: auto;*/
+/*    padding: 12px 0px;*/
+/*}*/
+
+/*p {margin-bottom: 0px*/
+/*}*/
+
+
+/*.extended {*/
+/*    display: flex;*/
+/*    justify-content: space-between; !* Distribute items horizontally *!*/
+/*}*/
+
+/*.extended-inf {*/
+/*    !*background-color: #f0f0f0; !* Replace with your desired background color *!*!*/
+/*    background-color: rgba(240, 240, 240, 0.3);*/
+/*    padding: 20px;*/
+/*    border-radius: 10px;*/
+/*    margin: 20px 0px 0px 20px;*/
+/*    !*width: calc(50% - 30px); !* Divide the width evenly between the two blocks *!*!*/
+/*    width: 150px;*/
+/*}*/
+
+/*#divfooter {*/
+/*    margin-left: 20px;*/
+/*    width: 1000px;*/
+/*}*/
 /*--------------------------------------*/

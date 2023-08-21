@@ -14,7 +14,6 @@ return [
     'fio' => 'Walentyna Litkiewicz',
     'album' => 'Album z wakacji',
     'view_gal' => 'Zobacz galerię',
-    'to_top' => 'Powrót do góry',
     'album_example' => 'Album jest przyklad  &copy; Bootstrap,  &copy; PHP,  &copy; Laravel',
     'search_but' => 'Szukaj',
 
@@ -45,5 +44,15 @@ return [
 
     //Search
     'pic_back_gal_vac' => 'Powrót do galerii Wakacje',
+
+    //Footer
+    'currency_exchange' => 'Kursy wymiany walut',
+    'current_weather' => 'Aktualne informacje o pogodzie',
+    'temperature' => 'Temperatura',
+    'wind_speed' => 'Prędkość wiatru',
+    'velocity' => 'km/h',
+    'sunrise' => 'Wschód słońca',
+    'sunset' => 'Zahód słońca',
+    'to_top' => 'Powrót do góry',
 ];
 

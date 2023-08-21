@@ -15,7 +15,6 @@ return [
     'fio' => 'Walentina Litkewich',
     'album_vac' => 'Vacations Album',
     'view_gal' => 'View gallery',
-    'to_top' => 'Back to top',
     'album_example' => 'Album example is &copy; Bootstrap,  &copy; PHP,  &copy; Laravel',
 
 
@@ -25,7 +24,7 @@ return [
     'login_but' => 'Login',
     'signup_but' => 'SignUp',
     'logout_but' => 'Logout',
-    'personal_account_but' => 'Account',
+    'personal_account_but' => 'Dashboard',
 
     //Vacation
     'vc_page' => 'Vacation page',
@@ -47,4 +46,14 @@ return [
 
     //Search
     'pic_back_gal_vac' => 'Back to gallery Vacation',
+
+    //Footer
+    'currency_exchange' => 'Currency Exchange Rates',
+    'current_weather' => 'Current Weather Information',
+    'temperature' => 'Temperature',
+    'wind_speed' => 'Wind Speed',
+    'velocity' => 'km/h',
+    'sunrise' => 'Sunrise',
+    'sunset' => 'sunset',
+    'to_top' => 'Back to top',
 ];

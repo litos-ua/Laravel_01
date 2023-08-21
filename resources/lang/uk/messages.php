@@ -14,7 +14,6 @@ return [
     'fio' => 'Валентина Литкевич',
     'album' => 'Альбом відпусток',
     'view_gal' => 'Переглянути галерею',
-    'to_top' => 'На початок',
     'album_example' => 'Альбом є прикладом &copy; Bootstrap,  &copy; PHP,  &copy; Laravel',
     'search_but' => 'Пошук',
 
@@ -45,4 +44,13 @@ return [
 
     //Search
     'pic_back_gal_vac' => 'Повернутися до галереї Відпустки',
+
+    'currency_exchange' => 'Курси обміну валют',
+    'current_weather' => 'Поточна інформація про погоду',
+    'temperature' => 'Температура',
+    'wind_speed' => 'Швидкість вітру',
+    'velocity' => 'км/год',
+    'sunrise' => 'Схід сонця',
+    'sunset' => 'Захід сонця',
+    'to_top' => 'На початок',
 ];
