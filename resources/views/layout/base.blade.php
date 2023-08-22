@@ -69,12 +69,18 @@
                         </div>
 
                         <div class="col-sm-2 offset-md-2 py-2" id="contact">
-                            <h4 class="text-white">{{__('messages.input_del')}}</h4>
+                            <h4 class="text-white">{{__('messages.useful_links')}}</h4>
                             <ul class="list-unstyled">
-                                <li><a href="/pictures/create" class="text-white" target="_blank">{{__('messages.pic_insert')}}</a></li>
-                                <li><a href="/vacations/create" class="text-white" target="_blank">{{__('messages.vac_insert')}}</a></li>
-                                <li><a href="/pictures/delete" class="text-white" target="_blank">{{__('messages.pic_delete')}}</a></li>
-                                <li><a href="/vacations/delete" class="text-white" target="_blank">{{__('messages.vac_delete')}}</a></li>
+                                <li><a href="https://ikolodziejska.pl/" class="text-white" target="_blank">{{__('messages.photo_studio')}}</a></li>
+                                <li><a href="https://www.orkalotusbeach.com/" class="text-white" target="_blank">{{__('messages.hotel_sentido_lotus')}}</a></li>
+                                <li><a href="https://warsawtour.pl/" class="text-white" target="_blank">{{__('messages.warsaw_tour')}}</a></li>
+                                <li><a href="https://www.trojmiasto.pl/" class="text-white" target="_blank">{{__('messages.trojmiasto')}}</a></li>
+                                <li><a href="https://www.sopot.pl/" class="text-white" target="_blank">{{__('messages.sopot')}}</a></li>
+                                <li><a href="https://pomorskie.travel/" class="text-white" target="_blank">{{__('messages.pomeranian_tourist')}}</a></li>
+                                <li><a href="https://zamek.malbork.pl/" class="text-white" target="_blank">{{__('messages.castle_malbork')}}</a></li>
+                                <li><a href="https://przemysl.pttk.pl/" class="text-white" target="_blank">{{__('messages.pttk')}}</a></li>
+                                <li><a href="https://visitsirmione.com/" class="text-white" target="_blank">{{__('messages.sirmione_info')}}</a></li>
+                                <li><a href="http://www.assisionline.com//" class="text-white" target="_blank">{{__('messages.assisi')}}</a></li>
                             </ul>
                         </div>
 
@@ -153,8 +159,8 @@
         @section('mainContent')
         <main>
             @if (isset(Auth::user()->status))
-                <p>User Status:   {{Auth::user()->status}} &nbsp&nbsp&nbsp User Name:   {{Auth::user()->name}}
-                    {{--Status type: {{ gettype(Auth::user()->status) }}--}}</p>
+{{--                <p>User Status:   {{Auth::user()->status}} &nbsp&nbsp&nbsp User Name:   {{Auth::user()->name}}--}}
+                    {{--Status type: {{ gettype(Auth::user()->status) }}</p>--}}
             @endif
             <section class="py-3 text-center container">
                 <div>

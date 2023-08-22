@@ -18,9 +18,9 @@
                     <tbody>
                     @foreach ($exchangeRates as $currency)
                         <tr>
-                            <td>{{ $currency['ccy'] }}&nbsp&nbsp&nbsp</td>
-                            <td>{{ round($currency['buy'],2) }}&nbsp&nbsp</td>
-                            <td>{{ round($currency['sale'],2) }}&nbsp&nbsp</td>
+                            <td>&nbsp&nbsp{{ $currency['ccy'] }}&nbsp&nbsp&nbsp</td>
+                            <td>&nbsp&nbsp{{ round($currency['buy'],2) }}&nbsp&nbsp</td>
+                            <td>&nbsp&nbsp{{ round($currency['sale'],2) }}&nbsp&nbsp</td>
                         </tr>
                   @endforeach
                     </tbody>
@@ -28,11 +28,11 @@
             </div>
             <div class="extended-inf" id = "divfooter">
                 <b>{{__('messages.current_weather')}}</b>
-                    <p>{{__('messages.temperature')}}: {{ $weatherData['current_weather']['temperature'] }}°C &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <p>{{__('messages.temperature')}}: {{ $weatherData['current_weather']['temperature'] }}°C &nbsp&nbsp&nbsp
                         {{__('messages.wind_speed')}}: {{ $weatherData['current_weather']['windspeed'] }} {{__('messages.velocity')}}</p>
 {{--                    <p>Wind Speed: {{ $weatherData['current_weather']['windspeed'] }} km/h</p>--}}
 {{--                    <p>Time: {{ $weatherData['current_weather']['time'] }}</p>--}}
-                    <p>{{__('messages.sunrise')}}: {{ $sunrise }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{__('messages.sunset')}}: {{ $sunset }}</p>
+                    <p>{{__('messages.sunrise')}}: {{ $sunrise }} &nbsp&nbsp&nbsp {{__('messages.sunset')}}: {{ $sunset }}</p>
 {{--                    <p>Sunrise: {{ $sunrise }}</p>--}}
             </div>
         </div>
