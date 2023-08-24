@@ -51,10 +51,12 @@
 
 
 body {
-    background-image: var(--background-image); /* Цвет фона и путь к файлу url(pictures/Semeiz_01b.jpg)*/
-    /*background-image: url("/pictures/back/Semeiz_01b.jpg")*/
-    background-repeat: repeat-y; /*{# no-repeat #}*/  /* Повторение фоновой картинки по вертикали*/
+    /*background-image: var(--background-image); !* Цвет фона и путь к файлу url(pictures/Semeiz_01b.jpg)*!*/
+    /*background-repeat: repeat-y; !*{# no-repeat #}*!  !* Повторение фоновой картинки по вертикали*!*/
+    /*background-size: contain;*/
+    background-repeat: repeat-y;
     background-size: contain;
+    transition: opacity 1s; /* Add a CSS transition for opacity */
 }
 
 /* Растягиваем заголовок */

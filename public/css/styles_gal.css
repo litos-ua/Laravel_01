@@ -1,11 +1,15 @@
 body {
 /*{# background-color: transparent; #}*/
-background-image: var(--background-image); /* Цвет фона и путь к файлу */
-/*background-image: url("/pictures/back/Semeiz_01b.jpg");    */
-/*url(http://localhost/pictures/Semeiz_01b.jpg)*/
-background-repeat: no-repeat; /*{# repeat-y #}  /* Повторение фоновой картинки по вертикали*/
-background-size: cover; /*{# contain #}*/
+
+/*background-image: var(--background-image); !* Цвет фона и путь к файлу *!*/
+/*background-repeat: no-repeat; !*{# repeat-y #}  !* Повторение фоновой картинки по вертикали*!*/
+/*background-size: cover; !*{# contain #}*!*/
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: opacity 1s; /* Add a CSS transition for opacity */
 }
+
 
 #logo{
     width: 100%;

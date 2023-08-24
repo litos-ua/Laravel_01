@@ -39,7 +39,8 @@
                 <li><a class="dropdown-item list-group-item-action"
                        href="{{ route('super.user.picture.create') }}">Create</a></li>
                 <li><a class="dropdown-item list-group-item-action"
-                       href="{{ route('super.user.picture.edit',\App\Models\Picture::first()) }}">Update</a></li>
+{{--                       href="{{ route('super.user.picture.edit',\App\Models\Picture::first()) }}">Update</a></li>--}}
+                       href="{{ route('super1.user.picture.edit1')}}">Update</a></li>
                 <li><a class="dropdown-item list-group-item-action"
 {{--                       href="{{ route('root.user.picture.input1', \App\Models\Picture::first()) }}">Update1</a></li>--}}
 {{--                <li><a class="dropdown-item list-group-item-action"--}}
@@ -56,7 +57,8 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <p>Admin profile {{ __('      Email:  ')}} {{ Auth::user()->email }}</p>
+                        <p>Admin profile {{ __('      Email:  ')}} {{ Auth::user()->email }}}</p>
+{{--                        @dd(\App\Models\Picture::first())--}}
                     </div>
 
                     <div class="card-body">

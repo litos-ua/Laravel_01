@@ -30,7 +30,7 @@
         <div class="container">
             <div class="row ">
                 <div class="col-md-2">
-                    <a href="/"><img id = "logo" src = "{{ asset('pictures/back/WFox_01a.jpg') }}" alt="Альтернативний текст"/></a>
+                    <a href="/"><img id = "logo" src = "{{ asset(config('my_config.logo_image')) }}" alt="Альтернативний текст"/></a>
                 </div>
                 <div class="col-md-10 right">
                     @section('header')
@@ -59,7 +59,7 @@
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                 {{__('messages.lang_but')}}
                             </button>
-                            <img class="flag-icon" src="{{ asset('/pictures/local/flags/english-flag.png') }}" alt="Flag" data-language="en">
+                            <img class="flag-icon" src="{{ asset(config('my_config.path_en_flags')) }}" alt="Flag" data-language="en">
                             <ul class="dropdown-menu" aria-labelledby="languageDropdown">
                                 <li><a class="dropdown-item" href="{{ route(Route::currentRouteName())}}" data-language="en">English</a></li>
                                 <li><a class="dropdown-item" href="{{ route(Route::currentRouteName())}}" data-language="pl">Polish</a></li>

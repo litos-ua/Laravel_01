@@ -39,7 +39,7 @@
         <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             {{__('messages.lang_but')}}
         </button>
-        <img class="flag-icon" src="{{ asset('/pictures/local/flags/english-flag.png') }}" alt="Flag" data-language="en">
+        <img class="flag-icon" src="{{ asset(config('my_config.path_en_flags')) }}" alt="Flag" data-language="en">
         <ul class="dropdown-menu" aria-labelledby="languageDropdown">
             <li><a class="dropdown-item" href="{{ route(Route::currentRouteName()) }}" data-language="en">English</a></li>
             <li><a class="dropdown-item" href="{{ route(Route::currentRouteName()) }}" data-language="pl">Polish</a></li>
@@ -48,19 +48,5 @@
     </div>
 @endsection
 
-
-{{--@section('footer')--}}
-{{--    <footer class="text-muted py-5" id="footer">--}}
-{{--        <div class="container" id="divfooter">--}}
-{{--            <p class="float-end mb-1">--}}
-{{--                <a href="#">Back to top</a>--}}
-{{--            </p>--}}
-{{--            <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>--}}
-{{--            <p class="mb-0">New to Bootstrap?--}}
-{{--                <a href="/">Visit the homepage</a> or read our--}}
-{{--                <a href="https://polsat.pl">getting started guide</a>.</p> {# ../getting-started/introduction/ #}--}}
-{{--        </div>--}}
-{{--    </footer>--}}
-{{--@endsection--}}
 
 

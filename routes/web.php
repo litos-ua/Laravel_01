@@ -133,13 +133,13 @@ Route::middleware("auth:web")->group(function () {
                 'show' => 'super.user.picture.show',
                 'destroy' => 'super.user.picture.destroy',
             ]);
+
         //Route::get('user/picture/input', [AdminUserPictureController::class,'input'])->name('super.user.picture.input');
     });
-
+    Route::get('super1/user/picture/edit1', [AdminUserPictureController::class,'edit1'])->name('super1.user.picture.edit1');
     Route::get('root/user/picture/input/{picture}', [AdminUserPictureController::class,'input'])
             ->name('root.user.picture.input');
 
-    //Route::post('/api/picturesa', [PictureController::class, 'showByQuery'])->name('api_picturesa'); //Постмен
 });
 
 

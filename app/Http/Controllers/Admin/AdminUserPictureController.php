@@ -99,8 +99,20 @@ class AdminUserPictureController extends Controller
      */
     public function edit(Picture $picture)
     {
+        $picturefirst=$picture->first();
         return view('admin.admin_user_picture_update', [
-            'picture' => $picture,
+            'picture' => $picturefirst,
+        ]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit1(Picture $picture)
+    {
+        $picturefirst=$picture->first();
+        return view('admin.admin_user_picture_update', [
+            'picture' => $picturefirst,
         ]);
     }
 

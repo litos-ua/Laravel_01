@@ -29,7 +29,7 @@
     </head>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-    <script src="{{ asset('js/local/flag.js') }}"></script>
+    <script src="{{ asset(config('my_config.path_js_flags')) }}"></script>
 {{--    <script>--}}
 {{--     Остальное аналогично файлу flag.js                                                   --}}
 {{--                var flagImageUrl = '{{ asset("/pictures/local/flags") }}/' + flagFilename;--}}
@@ -181,8 +181,18 @@
         @show
 
         @include('partials.footer')
-
-
+{{--    Data for js file wich has manage background switching--}}
+       <script>
+           var backgroundImages = [
+               '{{ config('my_config.background_image1') }}',
+               '{{ config('my_config.background_image2') }}',
+               '{{ config('my_config.background_image3') }}',
+               '{{ config('my_config.background_image4') }}',
+               '{{ config('my_config.background_image5') }}',
+               '{{ config('my_config.background_image6') }}',
+               '{{ config('my_config.background_image7') }}',
+           ];
+       </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
 </html>

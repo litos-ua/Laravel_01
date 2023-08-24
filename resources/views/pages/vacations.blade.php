@@ -29,7 +29,7 @@
         <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             {{__('messages.lang_but')}}
         </button>
-        <img class="flag-icon" src="{{ asset('/pictures/local/flags/english-flag.png') }}" alt="Flag" data-language="en">
+        <img class="flag-icon" src="{{ asset(config('my_config.path_en_flags')) }}" alt="Flag" data-language="en">
         <ul class="dropdown-menu" aria-labelledby="languageDropdown">
             <li><a class="dropdown-item" href="{{ route(Route::currentRouteName(),['vacCat' => 23]) }}" data-language="en">English</a></li>
             <li><a class="dropdown-item" href="{{ route(Route::currentRouteName(),['vacCat' => 23]) }}" data-language="pl">Polish</a></li>
@@ -104,6 +104,38 @@
             @endif
     </div>
 
+    </div>
+    </div>
+{{--    <script>--}}
+{{--        var backgroundImages = [--}}
+{{--            '{{ config('my_config.background_image1') }}',--}}
+{{--            '{{ config('my_config.background_image2') }}',--}}
+{{--            '{{ config('my_config.background_image3') }}',--}}
+{{--            '{{ config('my_config.background_image4') }}',--}}
+{{--            '{{ config('my_config.background_image5') }}',--}}
+{{--            '{{ config('my_config.background_image6') }}',--}}
+{{--            '{{ config('my_config.background_image7') }}',--}}
+{{--        ];--}}
+{{--        --}}
+{{--         var currentImageIndex = 0; // Start with the first image--}}
+{{--        --}}
+{{--         function updateBackgroundImage() {--}}
+{{--             console.log('Updating background image...'); // Debug line--}}
+{{--        --}}
+{{--             var backgroundImage = backgroundImages[currentImageIndex];--}}
+{{--             $('body').fadeOut(1000, function() {--}}
+{{--                 $(this).css('background-image', 'url(' + backgroundImage + ')').fadeIn(2000);--}}
+{{--             });--}}
+{{--        --}}
+{{--             currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;--}}
+{{--         }--}}
+{{--        --}}
+{{--         $(document).ready(function () {--}}
+{{--             updateBackgroundImage(); // Initial call--}}
+{{--             setInterval(updateBackgroundImage, 30000); // Change interval for testing--}}
+{{--         });--}}
+{{--    </script>--}}
+    <script src="{{ asset(config('my_config.path_background_images')) }}"></script>
 </main>
 {{--{% endblock%}--}}
 @endsection

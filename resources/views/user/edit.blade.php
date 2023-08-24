@@ -28,6 +28,7 @@
 @section('menu')
     <div class="list-group">
         <a href="{{ route('home') }}" class="list-group-item list-group-item-action" id="list-group-item">{{ __('auth.home') }}</a>
+        <a href="{{ route('vacation') }}" class="list-group-item list-group-item-action" id="list-group-item">{{ __('auth.vacation') }}</a>
         <a href="{{ route('user.edit') }}" class="list-group-item list-group-item-action" id="list-group-item">{{ __('auth.user') }}</a>
         <a href="{{ route('logout') }}" class="list-group-item list-group-item-action" id="list-group-item">{{ __('auth.logout') }}</a>
     </div>
@@ -182,7 +183,6 @@
                                 </div>
                             @endif
 
-                            <!-- ... rest of the form ... -->
                         </div>
                     </div>
                 </div>

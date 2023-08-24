@@ -37,7 +37,9 @@
                 <li><a class="dropdown-item list-group-item-action"
                        href="{{ route('super.user.picture.create') }}">Create</a></li>
                 <li><a class="dropdown-item list-group-item-action"
-                       href="{{ route('super.user.picture.edit',\App\Models\Picture::first()) }}">Update</a></li>
+{{--                       href="{{ route('super.user.picture.edit',['picture' => \App\Models\Picture::first()->id_pic]) }}">Update</a></li>--}}
+{{--                href="{{ route('super.user.picture.edit',['picture' => \App\Models\Picture::first()->id_pic]) }}">Update</a></li>--}}
+                href="{{ route('super1.user.picture.edit1')}}">Update</a></li>
                 <li><a class="dropdown-item list-group-item-action"
                        href="{{ route('super.user.picture.destroy', 2000) }}">Delete</a></li>
             </ul>
@@ -53,6 +55,7 @@
                 <div class="card">
                     <div class="card-header">
                         <p>Admin profile {{ __('      Email:  ')}} {{ Auth::user()->email }}</p>
+{{--                        @dd(\App\Models\Picture::first()->id_pic)--}}
 {{--                        <p>{{ __('User:  ')}} {{ Auth::user()->name }}{{ __('  Profile  ')}}</p>--}}
 {{--                        <p>{{ __('Email:  ')}} {{ Auth::user()->email }}{{ __('       Status:  ')}} {{ Auth::user()->status }}</p>--}}
 {{--                        @foreach(Auth::user()->phones as $phone)--}}

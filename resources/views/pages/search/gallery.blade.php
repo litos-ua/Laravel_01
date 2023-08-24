@@ -31,7 +31,7 @@
         <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             {{__('messages.lang_but')}}
         </button>
-        <img class="flag-icon" src="{{ asset('/pictures/local/flags/english-flag.png') }}" alt="Flag" data-language="en">
+        <img class="flag-icon" src="{{ asset(config('my_config.path_en_flags')) }}" alt="Flag" data-language="en">
         <ul class="dropdown-menu" aria-labelledby="languageDropdown">
             <li><a class="dropdown-item" href="#" data-language="en">English</a></li>
             <li><a class="dropdown-item" href="#" data-language="pl">Polish</a></li>
@@ -87,6 +87,7 @@
     </div>
 
 </main>
+<script src="{{ asset(config('my_config.path_background_images')) }}"></script>
 {{--{% endblock %}--}}
 @endsection
 
