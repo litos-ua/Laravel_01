@@ -60,13 +60,14 @@
                                 {{__('messages.lang_but')}}
                             </button>
                             <img class="flag-icon" src="{{ asset(config('my_config.path_en_flags')) }}" alt="Flag" data-language="en">
+                            @if (Route::currentRouteName() !== 'super.user.picture.edit')
                             <ul class="dropdown-menu" aria-labelledby="languageDropdown">
                                 <li><a class="dropdown-item" href="{{ route(Route::currentRouteName())}}" data-language="en">English</a></li>
                                 <li><a class="dropdown-item" href="{{ route(Route::currentRouteName())}}" data-language="pl">Polish</a></li>
                                 <li><a class="dropdown-item" href="{{ route(Route::currentRouteName())}}" data-language="uk">Ukrainian</a></li>
 
                             </ul>
-
+                            @endif
 {{--                            @include('partials.languageSelector')--}}
 
                         </div>

@@ -16,5 +16,5 @@ function updateBackgroundImage() {
 
 $(document).ready(function () {
     updateBackgroundImage(); // Initial call
-    setInterval(updateBackgroundImage, 30000); // Change interval for testing
+    setInterval(updateBackgroundImage, 60000); // Change interval for testing
 });

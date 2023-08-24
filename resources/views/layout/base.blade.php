@@ -21,7 +21,7 @@
         <style>
             :root {
                 --background-image-home: url('{{ config('my_config.background_image_home') }}');
-                --background-image: url('{{ config('my_config.background_image') }}');
+                --background-image: url('{{ config('my_config.background_image8') }}');
                 --logo-image: url('{{ config('my_config.logo_image') }}');
             }
         </style>

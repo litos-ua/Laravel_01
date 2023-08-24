@@ -132,8 +132,8 @@ Route::middleware("auth:web")->group(function () {
                 'update' => 'super.user.picture.update',
                 'show' => 'super.user.picture.show',
                 'destroy' => 'super.user.picture.destroy',
-            ]);
 
+            ]);
         //Route::get('user/picture/input', [AdminUserPictureController::class,'input'])->name('super.user.picture.input');
     });
     Route::get('super1/user/picture/edit1', [AdminUserPictureController::class,'edit1'])->name('super1.user.picture.edit1');

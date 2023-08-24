@@ -37,9 +37,9 @@
                 <li><a class="dropdown-item list-group-item-action"
                        href="{{ route('super.user.picture.create') }}">Create</a></li>
                 <li><a class="dropdown-item list-group-item-action"
-{{--                       href="{{ route('super.user.picture.edit',['picture' => \App\Models\Picture::first()->id_pic]) }}">Update</a></li>--}}
+                       href="{{ route('super.user.picture.edit',\App\Models\Picture::first()) }}">Update</a></li>
 {{--                href="{{ route('super.user.picture.edit',['picture' => \App\Models\Picture::first()->id_pic]) }}">Update</a></li>--}}
-                href="{{ route('super1.user.picture.edit1')}}">Update</a></li>
+{{--                href="{{ route('super1.user.picture.edit1')}}">Update</a></li>--}}
                 <li><a class="dropdown-item list-group-item-action"
                        href="{{ route('super.user.picture.destroy', 2000) }}">Delete</a></li>
             </ul>

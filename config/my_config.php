@@ -8,7 +8,8 @@ return [
     'background_image4' => '/pictures/back/Rhodes_03.jpg',     //background for rout "vacation", "gallery", "picture"
     'background_image5' => '/pictures/back/Semeiz_02b.jpg',    //background for rout "vacation", "gallery", "picture"
     'background_image6' => '/pictures/back/Rhodes_04.jpg',     //background for rout "vacation", "gallery", "picture"
-    'background_image7' => '/pictures/back/Trojmiasto_01.jpg',     //background for rout "vacation", "gallery", "picture"
+    'background_image7' => '/pictures/back/Trojmiasto_01.jpg', //background for rout "vacation", "gallery", "picture"
+    'background_image8' => '/pictures/back/Trojmiasto_02.jpg', //background for rout "vacation", "gallery", "picture"
     'logo_image' => '/pictures/back/WFox_01a.jpg',            // image for logotype (guest)
     'logo_image_auth' => '/pictures/back/Walentyna_2017.jpg', // image for logotype (auth user)
     'path_title_images' => '/pictures/images/00_title/',
