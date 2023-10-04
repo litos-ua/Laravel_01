@@ -100,8 +100,8 @@ body {
     left: 0; bottom: 0; /* Левый нижний угол */
 }
 #divfooter {
-    margin-left: 400px;
-    width: 1000px;
+    margin-left: 40%;
+    width: 50%;
 }
 /* Выравниваем горизонтально и позиционируем возле формочки поиска теги <input> и <button>*/
 .form-inline {
@@ -123,7 +123,7 @@ body {
     display: flex;
     align-items: center;
     height: 40px; /* Set the desired height for the input field and button */
-    width: 400px;
+    width: 120%;
 }
 
 .custom-search-input {
@@ -135,6 +135,27 @@ body {
     /* Set the desired width for the button */
     width: 20%; /* You can adjust this value as needed */
 }
+
+
+/* Default styles for responsive input and button */
+.responsive-input {
+    width: auto; /* Allow the elements to take up their natural width */
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+/* Media query for smaller screens (e.g., max-width: 768px) */
+@media (max-width: 1024px) {
+    .responsive-input {
+        width: auto; /* Allow the elements to take up their natural width */
+        margin-right: 5px; /* Adjust the margin for smaller screens */
+    }
+}
+
+
+
+
+
+
 
 /* завершение выравнивания */
 .language-selector {

@@ -35,7 +35,7 @@ class TestController extends Controller
     public function testIndex2()
     {
 
-        $vacationsFilenames = DB::select("SELECT * FROM old_vacations");
+        $vacationsFilenames = DB::select("SELECT * FROM vacations");
 
 //        foreach ($vacationsFilenames as $filenames) {
 //            echo 'id='.$filenames->id_cat . '&nbsp&nbsp' . $filenames->filename . '<br>' ;

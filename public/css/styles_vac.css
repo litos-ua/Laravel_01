@@ -117,7 +117,7 @@ body {
     display: flex;
     align-items: center;
     height: 40px; /* Set the desired height for the input field and button */
-    width: 400px;
+    width: 120%;
 }
 
 .custom-search-input {

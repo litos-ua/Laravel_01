@@ -8,7 +8,7 @@
 
 
 @section('content1')
-    <a href="/vacation" class="navbar-brand d-flex align-items-center">
+    <a href="/vacation" class="navbar-brand d-flex align-items-center responsive-input">
         <svg xmlns="http://www.w3.org/2000/svg"
              width="20" height="20"
              fill="none" stroke="currentColor"
@@ -36,7 +36,7 @@
 @section('languageSelector')
     <!-- Language Selector Dropdown -->
     <div class="dropdown language-selector">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-secondary dropdown-toggle responsive-input" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             {{__('messages.lang_but')}}
         </button>
         <img class="flag-icon" src="{{ asset(config('my_config.path_en_flags')) }}" alt="Flag" data-language="en">

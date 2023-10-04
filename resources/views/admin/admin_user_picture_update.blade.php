@@ -9,33 +9,6 @@
 @section('content')
 
         <script>
-            // $(document).ready(function() {
-            //  $("#add_picture").submit(function(event) {
-            //         event.preventDefault(); // Prevent the default form submission behavior
-            //
-            //         // Serialize the form data
-            //         var formData = $(this).serialize();
-            //
-            //         // This is AJAX request to submit the form data
-            //         $.ajax({
-            //             type: "POST",
-            //             url: $(this).attr("action"),
-            //             data: formData,
-            //             dataType: "json",
-            //             success: function(response) {
-            //                 // Handle the successful response
-            //                 alert("Picture added successfully!"); // You can show a success message or do something else here
-            //                 // Reset the form after successful submission
-            //                 $("#add_picture")[0].reset();
-            //             },
-            //             error: function(xhr, status, error) {
-            //                 // Handle the error response
-            //                 var errorMessage = xhr.responseJSON.message;
-            //                 alert(errorMessage); // Show the error message to the user
-            //             }
-            //         });
-            //     });
-            // });
             $(document).ready(function() {
                 $("#add_picture").submit(function(event) {
                     event.preventDefault();

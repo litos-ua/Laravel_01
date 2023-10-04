@@ -7,55 +7,6 @@
 @section('css1') <link rel="stylesheet" href="{{ asset('/css/admin/admin_panel.css') }}">@show
 
 @section('content')
-{{--    <script>--}}
-{{--        $(document).ready(function() {--}}
-{{--            $("#add_picture").submit(function (event) {--}}
-{{--                event.preventDefault(); // Prevent the default form submission behavior--}}
-{{--                // Target the form using its id--}}
-{{--                $("#add_picture").submit(function (event) {--}}
-{{--                    event.preventDefault(); // Prevent the default form submission behavior--}}
-
-{{--                    // Serialize the form data--}}
-{{--                    var formData = $(this).serialize();--}}
-
-{{--                    // This is AJAX request to submit the form data--}}
-{{--                    $.ajax({--}}
-{{--                        type: "POST",--}}
-{{--                        url: $(this).attr("action"),--}}
-{{--                        data: formData,--}}
-{{--                        dataType: "json",--}}
-{{--                        success: function (response) {--}}
-{{--                            // Handle the successful response--}}
-{{--                            alert("Picture added successfully!"); // You can show a success message or do something else here--}}
-{{--                            // Reset the form after successful submission--}}
-{{--                            //$("#add_picture")[0].reset();--}}
-{{--                        },--}}
-{{--                        error: function (xhr, status, error) {--}}
-{{--                            // Handle the error response--}}
-{{--                            var errorMessage = xhr.responseJSON.message;--}}
-{{--                            alert(errorMessage); // Show the error message to the user--}}
-{{--                        }--}}
-{{--                    });--}}
-{{--                });--}}
-{{--            });--}}
-{{--        });--}}
-{{--        //JavaScript code for handling form submission to see if the messages start appearing--}}
-{{--        $(document).ready(function() {--}}
-{{--            $("#add_picture").submit(function (event) {--}}
-{{--                event.preventDefault();--}}
-{{--                var formData = $(this).serialize();--}}
-
-{{--                $.post($(this).attr("action"), formData)--}}
-{{--                    .done(function(data) {--}}
-{{--                        alert("Picture added successfully!");--}}
-{{--                    })--}}
-{{--                    .fail(function(xhr, status, error) {--}}
-{{--                        var errorMessage = xhr.responseJSON.message;--}}
-{{--                        alert(errorMessage);--}}
-{{--                    });--}}
-{{--            });--}}
-{{--        });--}}
-{{--    </script>--}}
         <script>
             $(document).ready(function() {
              $("#add_picture").submit(function(event) {

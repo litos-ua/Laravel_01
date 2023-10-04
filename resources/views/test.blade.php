@@ -43,13 +43,13 @@
 {{--                    @endforeach--}}
 
 
-{{--                    @foreach ($vacations as $vacation)--}}
-{{--                        <p>Vacation ID: {{ $vacation->id_cat }}</p>--}}
-{{--                        <p>Vacation Category: {{ $vacation->category }}</p>--}}
-{{--                        <p>Vacation Filename: {{ $vacation->filename }}</p>--}}
-{{--                        <!-- Add more properties as needed -->--}}
-{{--                    @endforeach--}}
-                <p>Laguage: {{$locale}}</p>
+                    @foreach ($vacations as $vacation)
+                        <p>Vacation ID: {{ $vacation->id_cat }}</p>
+                        <p>Vacation Category: {{ $vacation->category }}</p>
+                        <p>Vacation Filename: {{ $vacation->filename }}</p>
+                        <!-- Add more properties as needed -->
+                    @endforeach
+{{--                <p>Laguage: {{$locale}}</p>--}}
 
                 </div>
 

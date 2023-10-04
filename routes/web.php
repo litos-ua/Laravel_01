@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminUserPictureController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\Lang\LocalizationController;
 use App\Http\Controllers\PictureController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TestController;
@@ -47,6 +48,12 @@ Route::get('/home', [MainController::class, 'index'])->name('home');
  */
 Route::get('/contact', [SendContactEmailController::class, 'showForm'])->name('contact.emailForm');
 Route::post('/contact', [SendContactEmailController::class, 'sendEmail'])->name('contact.send');
+
+/**
+ * Routes for localization
+ */
+//Route::get('lang/{locale}/{file}', 'LocalizationController@getLangFile');
+Route::get('lang/{locale}/{file}',[LocalizationController::class,'getLangFile']);
 
 
 Route::middleware("auth:web")->group(function () {

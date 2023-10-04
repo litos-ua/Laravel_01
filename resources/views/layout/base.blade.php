@@ -14,8 +14,6 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
         @section('css1') <link rel="stylesheet" href="{{ asset('/css/styles_home.css') }}?v=2"> @show
-        {{---Подключение JS ниже мешало работе toggler (меню только сворачивалось, но не разворачивалось)-}}
-        {{--        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>--}}
         <script src="{{ asset('js/app.js') }}"></script>
         {{--Подключаем параметры из config для файлов стиля и превращаем их в переменные--}}
         <style>
@@ -90,41 +88,41 @@
             <div class="navbar navbar-dark bg-dark shadow-sm ">
                 <div class="container" id="container2">
                     @yield('content1')
-                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" id = "head-form-search" action="{{ route('search') }}" method="POST">
+                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 responsive-input" role="search" id = "head-form-search" action="{{ route('search') }}" method="POST">
                     @csrf
                         <div class="custom-input-group" id="search-group">
                             <input type="search"
-                                   class="form-control form-control-dark text-bg-dark custom-search-input"
+                                   class="form-control form-control-dark text-bg-dark custom-search-input responsive-input"
                                    name="simpleSearch"
                                    placeholder="{{__('messages.search_but')}}..."
                                    aria-label="{{__('messages.search_but')}}">
-                            <button type="submit" class="btn btn-primary custom-search-button" id="search-button">{{__('messages.search_but')}}</button>
+                            <button type="submit" class="btn btn-primary custom-search-button responsive-input" id="search-button">{{__('messages.search_but')}}</button>
                         </div>
                     </form>
                     <div class="text-end">
                         @if (Auth::check())
                         <button type="button"
-                                class="btn btn-outline-light me-2"
+                                class="btn btn-outline-light me-2 responsive-input"
                                 onclick="window.location.href= '/logout'">
                             {{__('messages.logout_but')}}
                         </button>
                         @else
                         <button type="button"
-                                class="btn btn-outline-light me-2"
+                                class="btn btn-outline-light me-2 responsive-input"
                                 onclick="window.location.href= '/login'">
                             {{__('messages.login_but')}}
                         </button>
                         @endif
                         @if (!Auth::check())
                             <button type="button"
-                                class="btn btn-warning"
+                                class="btn btn-warning responsive-input"
                                 onclick="window.location.href= '/register'">
                             {{__('messages.signup_but')}}
                         </button>
                         @endif
                             @if (Auth::check())
                                 <button type="button"
-                                        class="btn btn-outline-light me-2"
+                                        class="btn btn-outline-light me-2 responsive-input"
                                         @if(Auth::user()->status===3)
                                             onclick="window.location.href= '/admin/user'" {{--/pictures/create--}}
                                         @else
@@ -142,14 +140,17 @@
 
                     @show
         @section('contentHeader2')
-                    <button class="navbar-toggler"
+                    <button class="navbar-toggler responsive-input"
                             type="button"
                             data-bs-toggle="collapse"
                             data-bs-target="#navbarHeader"
                             aria-controls="navbarHeader"
                             aria-expanded="false"
                             aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+{{--                        <span class="navbar-toggler-icon responsive-input"></span>--}}
+                        <div class="responsive-input-container">
+                            <span class="navbar-toggler-icon"></span>
+                        </div>
                     </button>
                 </div>
             </div>

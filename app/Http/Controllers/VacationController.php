@@ -33,8 +33,6 @@ class VacationController extends Controller
     {
         $picture = Vacation::find($id);
 
-        $a=1;
-
         if (!$picture) {
             return response()->json(['message' => 'Vacation not found'], 404);
         }
